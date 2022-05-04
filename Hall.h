@@ -13,8 +13,9 @@ private:
     //seats per row
     int seats;
 public:
-    Hall():hallId(0),performences(Vector<Performence>()),rolls(0),seats(0);
+    Hall():hallId(0),performences(Vector<Performence>()),rolls(0),seats(0){}
     Hall(int, Vector<Performence>, int, int);
+    Hall(const Hall&);
 
     int getHallId();
     const Vector<Performence>* getPerformences();

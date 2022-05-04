@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include "Hall.h"
 #include "myVector.h"
 
 
@@ -24,6 +25,11 @@ int main(int argc, char const *argv[])
     tm.tm_min = 15;
     tm.tm_isdst = 0; // Not daylight saving
     std::time_t t = std::mktime(&tm);
+
+    Hall hall(1, Vector<Performence>(), 5, 5);
+    
+    hall.addPerformence(Performence(std::mktime(&tm),myString("title1")));
+    hall.addPerformence(Performence(std::mktime(&tm),myString("title2")));
 
     int a=1,b=2,c=3;
     a=b=c;

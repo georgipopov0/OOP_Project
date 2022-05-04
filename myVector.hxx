@@ -46,6 +46,7 @@ Vector<T>& Vector<T>::operator=(const Vector<T>& vector){
     {
         this->elements[i] = vector.elements[i];
     }
+    return *this;
 }
 
 template <class T>
