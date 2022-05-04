@@ -23,10 +23,10 @@ Performence& Performence::operator=(const Performence& performence){
     return *this;
 }
 
-myString Performence::getTitle(){
+myString Performence::getTitle()const{
     return title;
 }
 
-std::time_t Performence::getDate(){
+std::time_t Performence::getDate()const{
     return date;
 }

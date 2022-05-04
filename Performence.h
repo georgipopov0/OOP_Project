@@ -16,6 +16,6 @@ public:
     Performence(const Performence&);
     Performence(Performence&& performence);
     Performence& operator=(const Performence&);
-    myString getTitle();
-    std::time_t getDate();
+    myString getTitle()const;
+    std::time_t getDate()const;
 };

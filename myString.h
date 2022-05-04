@@ -28,6 +28,6 @@ myString concat(const char *);
  
 myString concat(const myString &);
 
-const char* getChar();
+const char* getChar()const;
 };
 

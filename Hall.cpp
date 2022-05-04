@@ -10,19 +10,19 @@ Hall::Hall(const Hall& hall){
     this->seats = hall.seats;
 }
 
-int Hall::getHallId(){
+int Hall::getHallId()const{
     return hallId;
 }
 
-const Vector<Performence>* Hall::getPerformences(){
-    return &performences;
+const Vector<Performence>& Hall::getPerformences()const{
+    return performences;
 }
 
-int Hall::getRolls(){
+int Hall::getRolls()const{
     return rolls;
 }
 
-int Hall::getSeats(){
+int Hall::getSeats()const{
     return seats;
 }
 

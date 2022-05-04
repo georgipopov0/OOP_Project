@@ -17,10 +17,10 @@ public:
     Hall(int, Vector<Performence>, int, int);
     Hall(const Hall&);
 
-    int getHallId();
-    const Vector<Performence>* getPerformences();
-    int getRolls();
-    int getSeats();
+    int getHallId()const;
+    const Vector<Performence>& getPerformences()const;
+    int getRolls()const;
+    int getSeats()const;
 
     void addPerformence(Performence performence);
 };

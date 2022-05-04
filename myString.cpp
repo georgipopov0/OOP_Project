@@ -85,7 +85,7 @@ myString myString::concat(const myString &s){
     return *this;
 }
 
-const char* myString::getChar(){
+const char* myString::getChar()const{
     return this->str;
 } 
 

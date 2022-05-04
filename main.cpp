@@ -1,7 +1,6 @@
 #include <iostream>
 #include <ctime>
 #include "Hall.h"
-#include "myVector.h"
 
 
 int main(int argc, char const *argv[])
@@ -16,7 +15,7 @@ int main(int argc, char const *argv[])
     {
         std::cout << vector.get(j) << std::endl;
     }
-    
+
     std::tm tm{};
     tm.tm_year = 2020-1900; // 2020
     tm.tm_mon = 2-1; // February
@@ -29,6 +28,7 @@ int main(int argc, char const *argv[])
     Hall hall(1, Vector<Performence>(), 5, 5);
     
     hall.addPerformence(Performence(std::mktime(&tm),myString("title1")));
+    std::cout << hall.getHallId() << hall.getRolls() << hall.getSeats() << hall.getPerformences().get(0).getTitle().getChar();
     hall.addPerformence(Performence(std::mktime(&tm),myString("title2")));
 
     int a=1,b=2,c=3;
