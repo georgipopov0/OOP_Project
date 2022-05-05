@@ -14,8 +14,7 @@ void Performence::copyTickets(const Performence& performence){
     }
 }
 
-Performence::Performence(std::time_t date, myString title)
-            :date(date), title(title), tickets(Vector<Ticket*>()){}
+// Performence::Performence(std::time_t date, myString title):date(date), title(title), tickets(Vector()){}
 
 //not sure that this improves anything 
 //but im doing it anyway
