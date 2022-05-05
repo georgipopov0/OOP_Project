@@ -15,15 +15,13 @@ void Performence::copyTickets(const Performence& performence){
 }
 
 Performence::Performence(std::time_t date, myString title)
-            :date(date), title(title){}
+            :date(date), title(title), tickets(Vector<Ticket*>()){}
 
 //not sure that this improves anything 
 //but im doing it anyway
 Performence::Performence(Performence&& performence){
     this->date=performence.date;
     this->title=performence.title;
-    performence.title= performence.title;
-    date = performence.date;
     this->tickets=performence.tickets;
     performence.tickets.~Vector();
 }
@@ -32,6 +30,10 @@ Performence::Performence(const Performence &performence){
     this->date = performence.date;
     this->title = performence.title;
     this->copyTickets(performence);
+}
+
+Performence::~Performence(){
+    deleteTickets();
 }
 
 Performence& Performence::operator=(const Performence& performence){

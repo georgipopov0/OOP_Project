@@ -22,6 +22,7 @@ public:
     Performence(std::time_t date, myString title);
     Performence(const Performence&);
     Performence(Performence&& performence);
+    ~Performence();
     Performence& operator=(const Performence&);
     
     myString getTitle()const;
