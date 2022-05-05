@@ -68,7 +68,7 @@ T Vector<T>::pop(){
 }
 
 template<typename T>
-T Vector<T>::get(int index)const{
+T& Vector<T>::get(int index)const{
     if(index > elemCount || index < 0){
         throw "inex out of range";
     }

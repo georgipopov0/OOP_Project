@@ -1,5 +1,6 @@
 #pragma once
 #include "Ticket.h"
+#include "myString.h"
 
 class ReservedTicket: public Ticket
 {

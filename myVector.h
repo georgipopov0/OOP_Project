@@ -16,7 +16,7 @@ class Vector{
     void push(T element);
     void push(T element, int index);
     T pop();
-    T get(int index) const;
+    T& get(int index) const;
     
     int size()const;
     int getCapacity() const;
