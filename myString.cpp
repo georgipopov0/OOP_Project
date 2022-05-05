@@ -4,16 +4,16 @@
 using namespace std;
  
 
-    void myString::Copy(const myString &s){
-        int n = strlen(s.str) + 1;
-        str = new char[n];
-        for(int i = 0; i < n ; i++){
-            this->str[i] = s.str[i];
-        }
+void myString::Copy(const myString &s){
+    int n = strlen(s.str) + 1;
+    str = new char[n];
+    for(int i = 0; i < n ; i++){
+    this->str[i] = s.str[i];
     }
-    void myString::Erase(){
-        delete[] str;
-    }
+}
+void myString::Erase(){
+    delete[] str;
+}
  
  
 myString::myString() :str(nullptr){
