@@ -11,9 +11,10 @@ private:
     std::time_t date;
     myString title;
     Vector<Ticket*> tickets;
-
+    
     void deleteTickets();
     void copyTickets(const Performence &);
+    Ticket* findTicket(int,int);
 
 public:
     Performence():title(myString()), date(std::time_t()), tickets(Vector<Ticket*>()){}
@@ -26,5 +27,9 @@ public:
     std::time_t getDate()const;
     const Vector<Ticket*>& getTickets()const;
 
+
     void generateTickets(int rolls, int seats);
+    Vector<Ticket*> getAvailableTicktes() const;
+    void ReserveTicket(int roll, int seat, myString, myString);
+    void CancelReservation(int roll, int seat);
 };

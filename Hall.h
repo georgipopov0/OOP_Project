@@ -23,4 +23,6 @@ public:
     int getSeats()const;
 
     void addPerformence(Performence performence);
+    Performence* findPerformence(myString, std::time_t)const ;
+    
 };

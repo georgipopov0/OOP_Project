@@ -14,7 +14,17 @@ void Performence::copyTickets(const Performence& performence){
     }
 }
 
-// Performence::Performence(std::time_t date, myString title):date(date), title(title), tickets(Vector()){}
+Ticket* Performence::findTicket(int roll, int seat){
+    int rollSize = 0;
+    for (int i = 0;  tickets.get(i)->getSeat()==tickets.get(i+1)->getSeat() ; i++)
+    {
+        rollSize++;
+    }
+    return tickets.get(rollSize*roll+1 + seat+1);
+}
+
+Performence::Performence(std::time_t date, myString title)
+:date(date), title(title), tickets(Vector<Ticket*>()){}
 
 //not sure that this improves anything 
 //but im doing it anyway
@@ -65,4 +75,36 @@ void Performence::generateTickets(int rolls, int seats){
         }
     }
     
+}
+
+Vector<Ticket*> Performence::getAvailableTicktes()const{
+    Vector<Ticket*> availabelTickets;
+    for (int i = 0; i < tickets.size(); i++)
+    {
+        Ticket* tmpTicket = tickets.get(i);
+        if(tmpTicket->getStatus() == available){
+            availabelTickets.push(tmpTicket);
+        }
+    }
+    return availabelTickets;
+}
+
+void Performence::ReserveTicket(int roll, int seat, myString password, myString descriprion){
+    Ticket* ticket = findTicket(roll, seat);
+    if(ticket->getStatus() != available){
+        throw "Not available";
+    }
+    ReservedTicket* reserved =  new ReservedTicket(*ticket, descriprion, password);
+    delete ticket;
+    ticket = reserved;
+}
+
+void Performence::CancelReservation(int roll, int seat){
+    ReservedTicket* reservedTicket = dynamic_cast<ReservedTicket*>(findTicket(roll, seat));
+    if(reservedTicket->getStatus() != reserved){
+        throw "Not reserved";
+    }
+    Ticket* availableTicket =  new Ticket(reservedTicket->getRoll(), reservedTicket->getSeat());
+    delete reservedTicket;
+    reservedTicket = dynamic_cast<ReservedTicket*>(availableTicket); 
 }

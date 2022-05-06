@@ -1,4 +1,5 @@
 #include "Hall.h"
+#include <cstring>
 
 Hall::Hall(int hallId, Vector<Performence> performences, int rolls, int seats)
     :hallId(hallId), performences(performences), rolls(rolls), seats(seats){}
@@ -36,4 +37,18 @@ void Hall::addPerformence(Performence performence){
         }
     }
     this->performences.push(performence);
+    this->performences.get(this->performences.size()-1).generateTickets(rolls, seats);
+
 }
+
+Performence* Hall::findPerformence(myString title, std::time_t date)const{
+    for (int i = 0; i < performences.size(); i++){
+        Performence& performence = performences.get(i);
+        if(strcmp(performence.getTitle().getChar(), title.getChar()) 
+            && performence.getDate() == date){
+                return &performence;
+        }
+    }
+    return nullptr;
+}
+
