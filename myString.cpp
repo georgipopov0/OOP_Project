@@ -8,7 +8,7 @@ void myString::Copy(const myString &s){
     int n = strlen(s.str) + 1;
     str = new char[n];
     for(int i = 0; i < n ; i++){
-    this->str[i] = s.str[i];
+        this->str[i] = s.str[i];
     }
 }
 void myString::Erase(){
@@ -33,6 +33,11 @@ myString::myString(const myString &s){
     Copy(s);
 }
  
+myString::myString(myString&& string){
+    this->str = string.str;
+    string.str = nullptr;
+}
+
 myString& myString::operator =(const myString &s){
     if(this != &s){
         Erase();

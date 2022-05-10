@@ -13,6 +13,8 @@ myString();
 myString(const char*);
  
 myString(const myString &);
+
+myString(myString&&);
  
 myString& operator =(const myString &);
 

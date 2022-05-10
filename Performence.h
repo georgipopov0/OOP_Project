@@ -14,7 +14,7 @@ private:
     
     void deleteTickets();
     void copyTickets(const Performence &);
-    Ticket* findTicket(int,int);
+    Ticket* &findTicket(int,int)const;
 
 public:
     Performence():title(myString()), date(std::time_t()), tickets(Vector<Ticket*>()){}

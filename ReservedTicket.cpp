@@ -1,7 +1,7 @@
 #include "ReservedTicket.h"
 
-ReservedTicket::ReservedTicket(Ticket ticket, myString getDescription, myString password)
-    :Ticket(ticket), descriptin(descriptin), password(password){}
+ReservedTicket::ReservedTicket(Ticket ticket, myString arg_description, myString arg_password)
+    :Ticket(ticket), descriptin(arg_description), password(arg_password){}
 
 TicketStatus ReservedTicket::getStatus() const{
     return reserved;

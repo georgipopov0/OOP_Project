@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Performence.h"
 
 void Performence::deleteTickets(){
@@ -10,17 +11,17 @@ void Performence::deleteTickets(){
 void Performence::copyTickets(const Performence& performence){
     for (int i = 0; i < performence.tickets.size(); i++)
     {
-        this->tickets.push(new Ticket(*performence.tickets.get(i)),i);
+        this->tickets.push(new Ticket(*performence.tickets.get(i)));
     }
 }
 
-Ticket* Performence::findTicket(int roll, int seat){
+Ticket* &Performence::findTicket(int roll, int seat) const{
     int rollSize = 0;
-    for (int i = 0;  tickets.get(i)->getSeat()==tickets.get(i+1)->getSeat() ; i++)
+    for (int i = 0;  tickets.get(i)->getRoll() == tickets.get(i+1)->getRoll() ; i++)
     {
         rollSize++;
     }
-    return tickets.get(rollSize*roll+1 + seat+1);
+    return tickets.get(rollSize*roll + seat);
 }
 
 Performence::Performence(std::time_t date, myString title)
@@ -67,6 +68,7 @@ const Vector<Ticket*>& Performence::getTickets() const{
 }
 
 void Performence::generateTickets(int rolls, int seats){
+    this->tickets = Vector<Ticket*>();
     for (int i = 0; i < rolls; i++)
     {
         for (int j = i ; j < seats; j++)
@@ -82,6 +84,8 @@ Vector<Ticket*> Performence::getAvailableTicktes()const{
     for (int i = 0; i < tickets.size(); i++)
     {
         Ticket* tmpTicket = tickets.get(i);
+        TicketStatus status = tmpTicket->getStatus();
+        std::cout << status << std::endl;
         if(tmpTicket->getStatus() == available){
             availabelTickets.push(tmpTicket);
         }
@@ -90,13 +94,14 @@ Vector<Ticket*> Performence::getAvailableTicktes()const{
 }
 
 void Performence::ReserveTicket(int roll, int seat, myString password, myString descriprion){
-    Ticket* ticket = findTicket(roll, seat);
+    Ticket* &ticket = findTicket(roll, seat);
     if(ticket->getStatus() != available){
         throw "Not available";
     }
     ReservedTicket* reserved =  new ReservedTicket(*ticket, descriprion, password);
     delete ticket;
     ticket = reserved;
+    reserved = nullptr;
 }
 
 void Performence::CancelReservation(int roll, int seat){

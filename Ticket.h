@@ -2,14 +2,14 @@
 
     // Not sure where to put the enum
     enum TicketStatus{
-        available,
-        bought,
-        reserved
+        available = 1,
+        bought = 2,
+        reserved = 3
     };
 
 class Ticket
 {
-private:
+protected:
     int roll;
     int seat;
 
