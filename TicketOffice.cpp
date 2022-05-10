@@ -34,6 +34,6 @@ const Vector<Hall>& TicketOffice::getHalls()const{
 
 Vector<Ticket*> TicketOffice::getAvailableTickets(myString title, time_t date) const{
     Performence& performence = findPerformence(title, date);
-    return performence.getAvailableTicktes();
+    return performence.getTicktesWithStatus(available);
 }
 

@@ -32,10 +32,10 @@ int main(int argc, char const *argv[])
     std::cout << std::endl << "size: "<< hall.getPerformences().get(0).getTickets().size();
     hall.getPerformences().get(0).ReserveTicket(0,0,myString("ads"), myString("ads"));
 
-    Ticket* test[5];
-    test[0] = new Ticket(1,1);
-    test[1] = new ReservedTicket(*test[0], myString("asd"), myString("asd"));
-    std::cout<< std::endl << "1: " << test[0]->getStatus() << " 2: " << test[1]->getStatus() << " *: " << ((ReservedTicket*)test[1])->getPassword().getChar() << std::endl;
+    // Ticket* test[5];
+    // test[0] = new Ticket(1,1);
+    // test[1] = new ReservedTicket(*test[0], myString("asd"), myString("asd"));
+    // std::cout<< std::endl << "1: " << test[0]->getStatus() << " 2: " << test[1]->getStatus() << " *: " << ((ReservedTicket*)test[1])->getPassword().getChar() << std::endl;
     // for (int i = 0; i < hall.getPerformences().get(0).getTickets().size(); i++)
     // {
     //     std::cout << i <<": ";
@@ -48,7 +48,7 @@ int main(int argc, char const *argv[])
     // }
     
 
-    Vector<Ticket*> ave = hall.getPerformences().get(0).getAvailableTicktes();
+    Vector<Ticket*> ave = hall.getPerformences().get(0).getTicktesWithStatus(reserved);
     std::cout << "asd " << ave.size();
     for (int i = 0; i < ave.size(); i++)
     {
@@ -56,6 +56,15 @@ int main(int argc, char const *argv[])
         std::cout << "roll: " << ave.get(i)->getRoll() << "seat: " << ave.get(i)->getSeat() << std::endl;
     }
     
+    hall.getPerformences().get(0).BuyTicket(0,0);
+
+    ave = hall.getPerformences().get(0).getTicktesWithStatus(bought);
+    std::cout << "asd " << ave.size();
+    for (int i = 0; i < ave.size(); i++)
+    {
+        std::cout << "roll: " << ave.get(i)->getRoll() << " seat: " << ave.get(i)->getSeat() << std::endl;
+    }
+
     // std::cout<<a<<b<<c;
     return 0;
 }

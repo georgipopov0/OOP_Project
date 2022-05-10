@@ -29,7 +29,8 @@ public:
 
 
     void generateTickets(int rolls, int seats);
-    Vector<Ticket*> getAvailableTicktes() const;
+    Vector<Ticket*> getTicktesWithStatus(TicketStatus) const;
     void ReserveTicket(int roll, int seat, myString, myString);
     void CancelReservation(int roll, int seat);
+    void BuyTicket(int roll, int seat);
 };

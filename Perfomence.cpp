@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Performence.h"
+#include <cstring>
 
 void Performence::deleteTickets(){
     for (int i = 0; i < this->tickets.size(); i++)
@@ -79,14 +80,12 @@ void Performence::generateTickets(int rolls, int seats){
     
 }
 
-Vector<Ticket*> Performence::getAvailableTicktes()const{
+Vector<Ticket*> Performence::getTicktesWithStatus(TicketStatus status)const{
     Vector<Ticket*> availabelTickets;
     for (int i = 0; i < tickets.size(); i++)
     {
         Ticket* tmpTicket = tickets.get(i);
-        TicketStatus status = tmpTicket->getStatus();
-        std::cout << status << std::endl;
-        if(tmpTicket->getStatus() == available){
+        if(tmpTicket->getStatus() == status){
             availabelTickets.push(tmpTicket);
         }
     }
@@ -105,11 +104,35 @@ void Performence::ReserveTicket(int roll, int seat, myString password, myString 
 }
 
 void Performence::CancelReservation(int roll, int seat){
-    ReservedTicket* reservedTicket = dynamic_cast<ReservedTicket*>(findTicket(roll, seat));
+    Ticket* &reservedTicket = findTicket(roll, seat);
     if(reservedTicket->getStatus() != reserved){
         throw "Not reserved";
     }
     Ticket* availableTicket =  new Ticket(reservedTicket->getRoll(), reservedTicket->getSeat());
     delete reservedTicket;
-    reservedTicket = dynamic_cast<ReservedTicket*>(availableTicket); 
+    reservedTicket = availableTicket; 
+}
+
+void Performence::BuyTicket(int roll, int seat){
+    Ticket* &ticket = findTicket(roll, seat);
+    
+    if(ticket->getStatus() == bought){
+        throw "Already bought";
+    }
+
+    if(ticket->getStatus() == reserved){
+        // Not the best way to get the imput but 
+        // cant come up with better one.
+        std::cout << "Enter password for " << this->title.getChar() << " seat " << seat << " roll " << roll << std::endl;
+        char pass[50];
+        std::cin.getline(pass, 49);
+        if(strcmp(pass, ((ReservedTicket*)ticket)->getPassword().getChar())){
+            return;
+        }
+    }
+
+    BoughtTicket* boughtTicket = new BoughtTicket(*ticket);
+    delete ticket;
+    ticket = boughtTicket;
+    boughtTicket = nullptr;
 }
