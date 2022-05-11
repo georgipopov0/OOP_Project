@@ -22,6 +22,7 @@ Ticket* &Performence::findTicket(int roll, int seat) const{
     {
         rollSize++;
     }
+    rollSize++;
     return tickets.get(rollSize*roll + seat);
 }
 
@@ -72,7 +73,7 @@ void Performence::generateTickets(int rolls, int seats){
     this->tickets = Vector<Ticket*>();
     for (int i = 0; i < rolls; i++)
     {
-        for (int j = i ; j < seats; j++)
+        for (int j = 0 ; j < seats; j++)
         { 
             tickets.push(new Ticket(i, j));
         }

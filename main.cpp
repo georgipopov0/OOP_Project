@@ -1,10 +1,11 @@
 #include <iostream>
 #include <ctime>
-#include "Hall.h"
+#include "TicketOffice.h"
 
 
 int main(int argc, char const *argv[])
 {
+    try{
     Vector<int> vector;
     for (int i = 0; i < 20; i++)
     {
@@ -26,41 +27,36 @@ int main(int argc, char const *argv[])
     std::time_t t = std::mktime(&tm);
 
     Hall hall(1, Vector<Performence>(), 5, 5);
-    hall.addPerformence(Performence(std::mktime(&tm),myString("Performence1")));
-    std::cout << hall.getHallId() << hall.getRolls() << hall.getSeats() << hall.getPerformences().get(0).getTitle().getChar();
-    // hall.addPerformence(Performence(std::mktime(&tm),myString("title2")));
-    std::cout << std::endl << "size: "<< hall.getPerformences().get(0).getTickets().size();
-    hall.getPerformences().get(0).ReserveTicket(0,0,myString("ads"), myString("ads"));
+    TicketOffice office;
+    office.addHall(hall);
 
-    // Ticket* test[5];
-    // test[0] = new Ticket(1,1);
-    // test[1] = new ReservedTicket(*test[0], myString("asd"), myString("asd"));
-    // std::cout<< std::endl << "1: " << test[0]->getStatus() << " 2: " << test[1]->getStatus() << " *: " << ((ReservedTicket*)test[1])->getPassword().getChar() << std::endl;
-    // for (int i = 0; i < hall.getPerformences().get(0).getTickets().size(); i++)
+    office.addPerformence(Performence(std::mktime(&tm),myString("1")),1);
+    office.PrintTicketsWithStatus(myString("1"), std::mktime(&tm), available);
+    
+    office.ReservTicket(myString("1"), std::mktime(&tm),2,2,myString("a"),myString("a"));
+    office.PrintTicketsWithStatus(myString("1"), std::mktime(&tm), reserved);
+    // std::cout << hall.getHallId() << hall.getRolls() << hall.getSeats() << hall.getPerformences().get(0).getTitle().getChar();
+    // // hall.addPerformence(Performence(std::mktime(&tm),myString("title2")));
+    // std::cout << std::endl << "size: "<< hall.getPerformences().get(0).getTickets().size();
+    // hall.getPerformences().get(0).ReserveTicket(0,0,myString("ads"), myString("ads"));
+
+    // Vector<Ticket*> ave = hall.getPerformences().get(0).getTicktesWithStatus(reserved);
+    // std::cout << "asd " << ave.size();
+    // for (int i = 0; i < ave.size(); i++)
     // {
-    //     std::cout << i <<": ";
-    //     Ticket* testT = hall.getPerformences().get(0).getTickets().get(i);
-    // }
-
-    // ReservedTicket reservedT(Ticket(), myString("asd"), myString("asd"));
-    // if(reservedT.getStatus() == reserved){
-    //     std::cout<<"success";   
+    //     std::cout << "a" ;
+    //     std::cout << "roll: " << ave.get(i)->getRoll() << "seat: " << ave.get(i)->getSeat() << std::endl;
     // }
     
+    // hall.getPerformences().get(0).BuyTicket(0,0);
 
-    Vector<Ticket*> ave = hall.getPerformences().get(0).getTicktesWithStatus(reserved);
-    std::cout << "asd " << ave.size();
-    for (int i = 0; i < ave.size(); i++)
-    {
-        std::cout << "a" ;
-        std::cout << "roll: " << ave.get(i)->getRoll() << "seat: " << ave.get(i)->getSeat() << std::endl;
-    }
-    
-    hall.getPerformences().get(0).BuyTicket(0,0);
-
-    ave = hall.getPerformences().get(0).getTicktesWithStatus(bought);
-    std::cout << ave;
+    // ave = hall.getPerformences().get(0).getTicktesWithStatus(bought);
+    // std::cout << ave;
 
     // std::cout<<a<<b<<c;
     return 0;
+    }
+    catch(char const* error){
+        std::cout << error;
+    }
 }

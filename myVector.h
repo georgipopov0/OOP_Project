@@ -23,7 +23,7 @@ class Vector{
     int size()const;
     int getCapacity() const;
 
-    friend std::ostream& operator<<(std::ostream&, const Vector<Ticket*>);
+    friend std::ostream& operator<<(std::ostream&, const Vector<Ticket*>&);
     
     ~Vector();
     

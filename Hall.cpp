@@ -44,7 +44,7 @@ void Hall::addPerformence(Performence performence){
 Performence* Hall::findPerformence(myString title, std::time_t date)const{
     for (int i = 0; i < performences.size(); i++){
         Performence& performence = performences.get(i);
-        if(strcmp(performence.getTitle().getChar(), title.getChar()) 
+        if(!strcmp(performence.getTitle().getChar(), title.getChar()) 
             && performence.getDate() == date){
                 return &performence;
         }

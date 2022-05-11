@@ -2,7 +2,7 @@
 
 // The hardcode is real
 // (had to put it here or the linker gets angry)
-std::ostream& operator<<(std::ostream& os, const Vector<Ticket*> vec){
+std::ostream& operator<<(std::ostream& os, const Vector<Ticket*>& vec){
     int size = vec.size();
     for (int i = 0; i < size; i++)
     {
@@ -10,6 +10,7 @@ std::ostream& operator<<(std::ostream& os, const Vector<Ticket*> vec){
     }
     return os;
 }
+
 
 Performence& TicketOffice::findPerformence(myString title, std::time_t date) const{
 for (int i = 0; i < halls.size(); i++)
@@ -34,6 +35,11 @@ Hall& TicketOffice::findHall(int hallId) const{
     throw "Hall not found";
 }
 
+void TicketOffice::addHall(Hall hall){
+    this->halls.push(hall);
+}
+
+
 void TicketOffice::addPerformence(Performence performence, int hallId){
     Hall& hall = findHall(hallId);
     hall.addPerformence(performence);
@@ -43,14 +49,32 @@ const Vector<Hall>& TicketOffice::getHalls()const{
     return halls;
 }
 
-Vector<Ticket*> TicketOffice::getTicketsWithStatus(myString title, time_t date, TicketStatus status)const{
+
+
+void TicketOffice::PrintTicketsWithStatus(myString title, time_t date, TicketStatus status)const{
     // Eqivalent to ALL
     if(date == 0){
-
+        int halls_size = halls.size();
+        for (int i = 0; i < halls_size; i++)
+        {
+            try{
+            Vector<Performence> performences = halls.get(i).findPerformence(title);
+            int perf_size = performences.size();
+            for (int i = 0; i < perf_size; i++)
+            {
+                std::cout << performences.get(i).getTitle().getChar() 
+                        << ": "  << performences.get(i).getTickets();
+            }
+            }catch(char const*){
+                std::cout << "wtd";
+            }
+        }
     }
-    Performence& performence = findPerformence(title, date);
-    Vector<Ticket*> tickets = performence.getTicktesWithStatus(available);
-    return tickets;
+    else{
+        Performence& performence = findPerformence(title, date);
+        Vector<Ticket*> tickets = performence.getTicktesWithStatus(status);
+        std::cout << tickets;
+    }
 }
 
 // Pretty shure some functional 
