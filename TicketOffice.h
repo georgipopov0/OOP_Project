@@ -14,11 +14,11 @@ private:
 public:
     TicketOffice():halls(Vector<Hall>()){}
     void addHall(Hall);
-    void addPerformence(Performence, int hallId);
+    void addPerformence(const char* title, time_t date, int hallId);
     const Vector<Hall>& getHalls()const;
     void PrintTicketsWithTitle();
-    void PrintTicketsWithStatus(myString, time_t, TicketStatus)const;
-    void ReservTicket(myString, time_t, int, int, myString, myString);
-    void CancelReservation(myString, time_t, int, int);
-    void BuyTicket(myString, time_t, int, int);
+    void PrintTicketsWithStatus(const char*, time_t, TicketStatus)const;
+    void ReservTicket(const char*, time_t, int, int, myString, myString);
+    void CancelReservation(char*, time_t, int, int);
+    void BuyTicket(char*, time_t, int, int);
 };

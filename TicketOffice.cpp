@@ -40,9 +40,9 @@ void TicketOffice::addHall(Hall hall){
 }
 
 
-void TicketOffice::addPerformence(Performence performence, int hallId){
+void TicketOffice::addPerformence(const char* title, time_t date, int hallId){
     Hall& hall = findHall(hallId);
-    hall.addPerformence(performence);
+    hall.addPerformence(Performence(date, myString(title)));
 }
 
 const Vector<Hall>& TicketOffice::getHalls()const{
@@ -51,7 +51,7 @@ const Vector<Hall>& TicketOffice::getHalls()const{
 
 
 
-void TicketOffice::PrintTicketsWithStatus(myString title, time_t date, TicketStatus status)const{
+void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, TicketStatus status)const{
     // Eqivalent to ALL
     if(date == 0){
         int halls_size = halls.size();
@@ -79,14 +79,14 @@ void TicketOffice::PrintTicketsWithStatus(myString title, time_t date, TicketSta
 
 // Pretty shure some functional 
 // programing magic cat be used here ...
-void TicketOffice::ReservTicket(myString title, time_t date, int roll, int seat, myString pass, myString description = myString()){
+void TicketOffice::ReservTicket(const char* title, time_t date, int roll, int seat, myString pass, myString description = myString()){
     this->findPerformence(title,date).ReserveTicket(roll, seat, pass, description);
 }
 
-void TicketOffice::CancelReservation(myString title, time_t date, int roll, int seat){
+void TicketOffice::CancelReservation(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).CancelReservation(roll, seat);
 }
 
-void TicketOffice::BuyTicket(myString title, time_t date, int roll, int seat){
+void TicketOffice::BuyTicket(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).BuyTicket(roll, seat);
 }

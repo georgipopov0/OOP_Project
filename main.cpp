@@ -30,11 +30,11 @@ int main(int argc, char const *argv[])
     TicketOffice office;
     office.addHall(hall);
 
-    office.addPerformence(Performence(std::mktime(&tm),myString("1")),1);
-    office.PrintTicketsWithStatus(myString("1"), std::mktime(&tm), available);
+    office.addPerformence("1",std::mktime(&tm),1);
+    office.PrintTicketsWithStatus("1", std::mktime(&tm), available);
     
-    office.ReservTicket(myString("1"), std::mktime(&tm),2,2,myString("a"),myString("a"));
-    office.PrintTicketsWithStatus(myString("1"), std::mktime(&tm), reserved);
+    office.ReservTicket("1", std::mktime(&tm),2,2,"a","a");
+    office.PrintTicketsWithStatus("1", std::mktime(&tm), reserved);
     // std::cout << hall.getHallId() << hall.getRolls() << hall.getSeats() << hall.getPerformences().get(0).getTitle().getChar();
     // // hall.addPerformence(Performence(std::mktime(&tm),myString("title2")));
     // std::cout << std::endl << "size: "<< hall.getPerformences().get(0).getTickets().size();
