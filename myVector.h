@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include "Ticket.h"
 
 template <typename T>
 class Vector{
@@ -21,6 +23,8 @@ class Vector{
     int size()const;
     int getCapacity() const;
 
+    friend std::ostream& operator<<(std::ostream&, const Vector<Ticket*>);
+    
     ~Vector();
     
 

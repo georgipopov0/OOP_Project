@@ -59,11 +59,7 @@ int main(int argc, char const *argv[])
     hall.getPerformences().get(0).BuyTicket(0,0);
 
     ave = hall.getPerformences().get(0).getTicktesWithStatus(bought);
-    std::cout << "asd " << ave.size();
-    for (int i = 0; i < ave.size(); i++)
-    {
-        std::cout << "roll: " << ave.get(i)->getRoll() << " seat: " << ave.get(i)->getSeat() << std::endl;
-    }
+    std::cout << ave;
 
     // std::cout<<a<<b<<c;
     return 0;

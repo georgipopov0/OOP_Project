@@ -1,3 +1,4 @@
+
 template <class T>
 void Vector<T>::push(T element){
     if(elemCount == capacity){
@@ -92,4 +93,5 @@ Vector<T>::~Vector(){
     elemCount=0;
     capacity=0;
 }
+
 

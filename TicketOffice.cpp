@@ -1,5 +1,16 @@
 #include "TicketOffice.h"
 
+// The hardcode is real
+// (had to put it here or the linker gets angry)
+std::ostream& operator<<(std::ostream& os, const Vector<Ticket*> vec){
+    int size = vec.size();
+    for (int i = 0; i < size; i++)
+    {
+        os << "(" << vec.get(i)->getRoll() << "," << vec.get(i)->getSeat() << ")" <<std::endl;
+    }
+    return os;
+}
+
 Performence& TicketOffice::findPerformence(myString title, std::time_t date) const{
 for (int i = 0; i < halls.size(); i++)
     {
@@ -32,8 +43,26 @@ const Vector<Hall>& TicketOffice::getHalls()const{
     return halls;
 }
 
-Vector<Ticket*> TicketOffice::getAvailableTickets(myString title, time_t date) const{
+Vector<Ticket*> TicketOffice::getTicketsWithStatus(myString title, time_t date, TicketStatus status)const{
+    // Eqivalent to ALL
+    if(date == 0){
+
+    }
     Performence& performence = findPerformence(title, date);
-    return performence.getTicktesWithStatus(available);
+    Vector<Ticket*> tickets = performence.getTicktesWithStatus(available);
+    return tickets;
 }
 
+// Pretty shure some functional 
+// programing magic cat be used here ...
+void TicketOffice::ReservTicket(myString title, time_t date, int roll, int seat, myString pass, myString description = myString()){
+    this->findPerformence(title,date).ReserveTicket(roll, seat, pass, description);
+}
+
+void TicketOffice::CancelReservation(myString title, time_t date, int roll, int seat){
+    this->findPerformence(title, date).CancelReservation(roll, seat);
+}
+
+void TicketOffice::BuyTicket(myString title, time_t date, int roll, int seat){
+    this->findPerformence(title, date).BuyTicket(roll, seat);
+}
