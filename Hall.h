@@ -26,5 +26,4 @@ public:
     Performence* findPerformence(myString, std::time_t)const ;
     Vector<Performence*> findPerformence(myString)const;
     Vector<Performence*> findPerformence(std::time_t date)const;
-    
 };

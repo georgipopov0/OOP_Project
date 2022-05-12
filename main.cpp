@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <ctime>
 #include "TicketOffice.h"
@@ -32,14 +33,24 @@ int main(int argc, char const *argv[])
     // office.PrintTicketsWithStatus("3", std::mktime(&tm), available);
     office.ReservTicket("1", std::mktime(&tm),2,2,"a","a");
     
+    office.ReservTicket("1",t,1,1,"pass","desc");
     office.BuyTicket("4", t+1, 2,2);
     office.BuyTicket("4", t+1, 2,3);
     office.BuyTicket("4", t+1, 3,3);
-    // office.PrintTicketsWithStatus("3", 0, aveilable);    
-    office.PrintTicketsWithStatus("ALL", t+1, bought);
-    return 0;
+
+    office.PrintTicketsWithStatus("1", 0, reserved);    
+    // office.PrintTicketsWithStatus("ALL", t+1, bought);
+    // office.PrintBouthTicketsForHall(-1);
+
+    std::ofstream myFile;
+    myFile.open("test.txt");
+    myFile << office;
+    myFile.close();
+
     }
     catch(char const* error){
         std::cout << error;
     }
+    return 0;
 }
+

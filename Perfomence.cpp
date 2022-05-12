@@ -122,14 +122,14 @@ void Performence::BuyTicket(int roll, int seat){
     }
 
     if(ticket->getStatus() == reserved){
-        // Not the best way to get the imput but 
-        // cant come up with better one.
-        std::cout << "Enter password for " << this->title.getChar() << " seat " << seat << " roll " << roll << std::endl;
-        char pass[50];
-        std::cin.getline(pass, 49);
-        if(strcmp(pass, ((ReservedTicket*)ticket)->getPassword().getChar())){
-            return;
-        }
+    // Not the best way to get the imput but 
+    // cant come up with better one.
+    std::cout << "Enter password for " << this->title.getChar() << " on" << ctime(&(this->date)) << " seat " << seat << " roll " << roll << std::endl;
+    char pass[50];
+    std::cin.getline(pass, 49);
+    if(strcmp(pass, ((ReservedTicket*)ticket)->getPassword().getChar())){
+        return;
+    }
     }
 
     BoughtTicket* boughtTicket = new BoughtTicket(*ticket);

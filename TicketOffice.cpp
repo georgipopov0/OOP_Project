@@ -1,5 +1,6 @@
 #include "TicketOffice.h"
 #include <cstring>
+#include <fstream>
 
 // The hardcode is real
 // (had to put it here or the linker gets angry)
@@ -85,7 +86,7 @@ void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, Ticket
             {
                 std::cout << "-----------------------------------" << std::endl
                         << performences.get(i)->getTitle().getChar() << std::endl
-                        << ": "  << performences.get(i)->getTicktesWithStatus(status);
+                        << ": "  << performences.get(i)->getTicktesWithStatus(status)<<std::endl;
             }
             }catch(char const*){
                 //change that later
@@ -115,7 +116,7 @@ void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
             {
                 time_t time = perf.get(i).getDate();
                 std::cout << perf.get(i).getTitle().getChar() << " " << ctime(&time)
-                    << " | " << "Sold: " << perf.get(i).getTicktesWithStatus(bought).size();
+                    << " | " << "Sold: " << perf.get(i).getTicktesWithStatus(bought).size() << std::endl;
             }
         }
     }
@@ -146,4 +147,41 @@ void TicketOffice::CancelReservation(const char* title, time_t date, int roll, i
 
 void TicketOffice::BuyTicket(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).BuyTicket(roll, seat);
+}
+
+std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOffice){
+    int hall_count = ticketOffice.halls.size();
+    for (int i = 0; i < hall_count; i++)
+    {
+        Hall& hall = ticketOffice.halls.get(i);
+        output<<hall.getHallId()<<","<<hall.getRolls()<<","<<hall.getSeats();
+        int performences_size = hall.getPerformences().size();
+        for (int j = 0; j < performences_size; j++)
+        {
+            Performence& performence = hall.getPerformences().get(j);
+            output <<"("<<performence.getTitle().getChar()<<","<<performence.getDate();
+            int tickets_size = performence.getTickets().size();
+            for (int k = 0; k < tickets_size; k++)
+            {
+                Ticket* ticket = performence.getTickets().get(k);
+                output<<"(";
+                if(ticket->getStatus() == reserved){
+                    output  << ticket->getStatus() << "," 
+                            << ticket->getRoll() << ","
+                            << ticket->getSeat() << ","
+                            << ((ReservedTicket*)(ticket))->getPassword().getChar() << ","
+                            << ((ReservedTicket*)(ticket))->getDescription().getChar();
+                }else{
+                    output  << ticket->getStatus() << "," 
+                            << ticket->getRoll() << ","
+                            << ticket->getSeat();
+                }
+                output<<")";
+            }
+            output << ")";
+            
+        }
+    output<<std::endl;
+    }
+    return output;  
 }
