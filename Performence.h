@@ -33,4 +33,8 @@ public:
     void ReserveTicket(int roll, int seat, myString, myString);
     void CancelReservation(int roll, int seat);
     void BuyTicket(int roll, int seat);
+
+    //Hardcode for file reading
+    void UpdateTicket(Ticket* newTicket);
+    void UpdateTickets(Vector<Ticket*> tickets);
 };

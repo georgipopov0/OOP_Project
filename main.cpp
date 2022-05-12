@@ -42,11 +42,18 @@ int main(int argc, char const *argv[])
     // office.PrintTicketsWithStatus("ALL", t+1, bought);
     // office.PrintBouthTicketsForHall(-1);
 
-    std::ofstream myFile;
+    TicketOffice test;
+    std::ifstream myFile;
     myFile.open("test.txt");
-    myFile << office;
+    myFile >> test;
     myFile.close();
-
+    
+    // test.PrintTicketsWithStatus("4",t+1,bought);
+    for (int i = 0; i < test.getHalls().size(); i++)
+    {
+        std::cout << test.getHalls().get(i).getHallId();
+    }
+    
     }
     catch(char const* error){
         std::cout << error;

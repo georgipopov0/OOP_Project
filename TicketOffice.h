@@ -26,5 +26,6 @@ public:
     void CancelReservation(const char*, time_t, int, int);
     void BuyTicket(const char*, time_t, int, int);
 
-    friend std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOffice);    
+    friend std::ofstream& operator <<(std::ofstream & output, TicketOffice const& ticketOffice);    
+    friend std::ifstream& operator >>(std::ifstream& is, TicketOffice& office);
 };

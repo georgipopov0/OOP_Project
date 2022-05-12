@@ -137,3 +137,13 @@ void Performence::BuyTicket(int roll, int seat){
     ticket = boughtTicket;
     boughtTicket = nullptr;
 }
+
+void Performence::UpdateTicket(Ticket* newTicket){
+    Ticket*& tmp = findTicket(newTicket->getRoll(), newTicket->getSeat());
+    delete tmp;
+    tmp = newTicket;
+}
+
+void Performence::UpdateTickets(Vector<Ticket*> tickets){
+    this->tickets = tickets;
+}

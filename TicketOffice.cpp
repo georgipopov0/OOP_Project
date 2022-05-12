@@ -1,6 +1,7 @@
 #include "TicketOffice.h"
 #include <cstring>
 #include <fstream>
+#include <stdlib.h>
 
 // The hardcode is real
 // (had to put it here or the linker gets angry)
@@ -184,4 +185,69 @@ std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOf
     output<<std::endl;
     }
     return output;  
+}
+
+std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
+    office = TicketOffice();
+    while(is){
+        char hallid[8];
+        if(*hallid == '\0'){
+            break;
+        }
+        is.getline(hallid, 8, ',');
+        char rolls[8];
+        is.getline(rolls, 8, ',');
+        char seats[8];
+        is.getline(seats, 8, '(');
+        Hall hall(std::atoi(hallid), Vector<Performence>() ,std::atoi(rolls), std::atoi(seats));
+        office.addHall(hall);
+        while(is){
+            if(is.peek()=='\n'){
+                is.get();
+                break;
+            }
+            if(is.peek()=='('){
+                is.get();
+            }
+            char title[256];
+            is.getline(title, 256, ',');
+            char date[256];
+            is.getline(date, 256, '(');
+            Performence tmpPerformence(std::atoi(date), title);
+            hall.addPerformence(tmpPerformence);
+            Performence* performence = hall.findPerformence(title, tmpPerformence.getDate());
+            Vector<Ticket*> tmpTickets;
+            while (true)
+            {
+                if(is.peek()=='(' || is.peek()=='\n'){
+                    break;
+                }
+                char status;
+                status = is.get();
+                is.get();
+                char roll[8];
+                is.getline(roll,8,',');
+                char seat[8];
+                if(status=='1'){
+                    is.getline(seat,8,')');
+                    tmpTickets.push(new Ticket(std::atoi(roll), std::atoi(seat)));
+                }
+                else if (status=='2')
+                {
+                    is.getline(seat,8,')');
+                    tmpTickets.push((Ticket*)(new BoughtTicket(Ticket(std::atoi(roll), std::atoi(seat)))));
+                }
+                else if(status=='3'){
+                    is.getline(seat,8,',');
+                    char pass[64];
+                    is.getline(pass,64,',');
+                    char desc[256];
+                    is.getline(desc,256,')');
+                    tmpTickets.push((Ticket*)(new ReservedTicket(Ticket(std::atoi(roll),std::atoi(seat)),pass,desc)));
+                }
+                is.get();
+            }
+        }
+    }
+    return is;
 }
