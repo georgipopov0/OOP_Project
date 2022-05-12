@@ -52,23 +52,23 @@ Performence* Hall::findPerformence(myString title, std::time_t date)const{
     return nullptr;
 }
 
-Vector<Performence> Hall::findPerformence(myString title)const{
-    Vector<Performence> tmpPerformences;
+Vector<Performence*> Hall::findPerformence(myString title)const{
+    Vector<Performence*> tmpPerformences;
     for (int i = 0; i < performences.size(); i++){
         Performence& performence = performences.get(i);
-        if(strcmp(performence.getTitle().getChar(), title.getChar())){
-                tmpPerformences.push(performence);
+        if(!strcmp(performence.getTitle().getChar(), title.getChar())){
+                tmpPerformences.push(&performence);
         }
     }
     return tmpPerformences;
 }
 
-Vector<Performence> Hall::findPerformence(std::time_t date)const{
-    Vector<Performence> tmpPerformences;
+Vector<Performence*> Hall::findPerformence(std::time_t date)const{
+    Vector<Performence*> tmpPerformences;
     for (int i = 0; i < performences.size(); i++){
         Performence& performence = performences.get(i);
         if(performence.getDate() == date){
-                tmpPerformences.push(performence);
+                tmpPerformences.push(&performence);
         }
     }
     return tmpPerformences;

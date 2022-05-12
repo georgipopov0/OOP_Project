@@ -1,4 +1,5 @@
 #include "TicketOffice.h"
+#include <cstring>
 
 // The hardcode is real
 // (had to put it here or the linker gets angry)
@@ -58,15 +59,37 @@ void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, Ticket
         for (int i = 0; i < halls_size; i++)
         {
             try{
-            Vector<Performence> performences = halls.get(i).findPerformence(title);
+            Vector<Performence*> performences = halls.get(i).findPerformence(title);
             int perf_size = performences.size();
             for (int i = 0; i < perf_size; i++)
             {
-                std::cout << performences.get(i).getTitle().getChar() 
-                        << ": "  << performences.get(i).getTickets();
+                time_t time = performences.get(i)->getDate();
+                std::cout << "-----------------------------------" << std::endl
+                        << performences.get(i)->getTitle().getChar() << " " << ctime(&time) << std::endl
+                        << ": "  << performences.get(i)->getTicktesWithStatus(status);
             }
             }catch(char const*){
                 std::cout << "wtd";
+            }
+        }
+    }
+    else if(!strcmp(title, "ALL"))
+    {
+        int halls_size = halls.size();
+        for (int i = 0; i < halls_size; i++)
+        {
+            try{
+            Vector<Performence*> performences = halls.get(i).findPerformence(date);
+            int perf_size = performences.size();
+            for (int i = 0; i < perf_size; i++)
+            {
+                std::cout << "-----------------------------------" << std::endl
+                        << performences.get(i)->getTitle().getChar() << std::endl
+                        << ": "  << performences.get(i)->getTicktesWithStatus(status);
+            }
+            }catch(char const*){
+                //change that later
+                std::cout << "wtf";
             }
         }
     }
@@ -77,8 +100,42 @@ void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, Ticket
     }
 }
 
-// Pretty shure some functional 
-// programing magic cat be used here ...
+void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
+    // Equal to ALL
+    if(hallId = -1){
+        int halls_size = halls.size();
+        for (int i = 0; i < halls_size; i++)
+        {
+            Hall& hall = halls.get(i);
+            const Vector<Performence>& perf = hall.getPerformences();
+            int perf_size = perf.size();
+            std::cout << "----------------------------" << std::endl 
+                << "Hall number " << hall.getHallId() << std::endl;
+            for (int i = 0; i < perf_size; i++)
+            {
+                time_t time = perf.get(i).getDate();
+                std::cout << perf.get(i).getTitle().getChar() << " " << ctime(&time)
+                    << " | " << "Sold: " << perf.get(i).getTicktesWithStatus(bought).size();
+            }
+        }
+    }
+    else{
+        Hall hall = this->findHall(hallId);
+        const Vector<Performence>& perf = hall.getPerformences();
+        int perf_size = perf.size();
+        std::cout << "----------------------------" << std::endl 
+            << "Hall number " << hall.getHallId() << std::endl;
+        for (int i = 0; i < perf_size; i++)
+        {
+            time_t time = perf.get(i).getDate();
+            std::cout << perf.get(i).getTitle().getChar() << " " << ctime(&time)
+                << " | " << "Sold: " << perf.get(i).getTicktesWithStatus(bought).size();
+        }
+    }
+}
+
+// Pretty shure some lambda
+// magic can be used here ...
 void TicketOffice::ReservTicket(const char* title, time_t date, int roll, int seat, myString pass, myString description = myString()){
     this->findPerformence(title,date).ReserveTicket(roll, seat, pass, description);
 }

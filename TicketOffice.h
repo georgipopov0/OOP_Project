@@ -16,9 +16,9 @@ public:
     void addHall(Hall);
     void addPerformence(const char* title, time_t date, int hallId);
     const Vector<Hall>& getHalls()const;
-    void PrintTicketsWithTitle();
     void PrintTicketsWithStatus(const char*, time_t, TicketStatus)const;
+    void PrintBouthTicketsForHall(int) const;
     void ReservTicket(const char*, time_t, int, int, myString, myString);
-    void CancelReservation(char*, time_t, int, int);
-    void BuyTicket(char*, time_t, int, int);
+    void CancelReservation(const char*, time_t, int, int);
+    void BuyTicket(const char*, time_t, int, int);
 };

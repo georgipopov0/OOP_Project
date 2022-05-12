@@ -6,54 +6,37 @@
 int main(int argc, char const *argv[])
 {
     try{
-    Vector<int> vector;
-    for (int i = 0; i < 20; i++)
-    {
-        vector.push(i);
-    }
-    
-    for (int j = 0; j < 20; j++)
-    {
-        std::cout << vector.get(j) << std::endl;
-    }
-
     std::tm tm{};
-    tm.tm_year = 2020-1900; // 2020
-    tm.tm_mon = 2; // February
-    tm.tm_mday = 15; // 15th
-    tm.tm_hour = 10;
-    tm.tm_min = 15;
+    tm.tm_year = 2022-1900; // 2022
+    tm.tm_mon = 5 - 1 ;
+    tm.tm_mday = 20; 
+    tm.tm_hour = 0;
+    tm.tm_min = 0;
     tm.tm_isdst = 0; // Not daylight saving
     std::time_t t = std::mktime(&tm);
 
-    Hall hall(1, Vector<Performence>(), 5, 5);
+    Hall hall1(1, Vector<Performence>(), 5, 5);
+    Hall hall2(2, Vector<Performence>(), 4, 4);
     TicketOffice office;
-    office.addHall(hall);
+    office.addHall(hall1);
+    office.addHall(hall2);
 
-    office.addPerformence("1",std::mktime(&tm),1);
-    office.PrintTicketsWithStatus("1", std::mktime(&tm), available);
+
     
+    office.addPerformence("1", t,1);
+    office.addPerformence("2", t+1,1);
+    office.addPerformence("3", t, 2); 
+    office.addPerformence("3", t+2, 2); 
+    office.addPerformence("4", t+1, 2);
+
+    // office.PrintTicketsWithStatus("3", std::mktime(&tm), available);
     office.ReservTicket("1", std::mktime(&tm),2,2,"a","a");
-    office.PrintTicketsWithStatus("1", std::mktime(&tm), reserved);
-    // std::cout << hall.getHallId() << hall.getRolls() << hall.getSeats() << hall.getPerformences().get(0).getTitle().getChar();
-    // // hall.addPerformence(Performence(std::mktime(&tm),myString("title2")));
-    // std::cout << std::endl << "size: "<< hall.getPerformences().get(0).getTickets().size();
-    // hall.getPerformences().get(0).ReserveTicket(0,0,myString("ads"), myString("ads"));
-
-    // Vector<Ticket*> ave = hall.getPerformences().get(0).getTicktesWithStatus(reserved);
-    // std::cout << "asd " << ave.size();
-    // for (int i = 0; i < ave.size(); i++)
-    // {
-    //     std::cout << "a" ;
-    //     std::cout << "roll: " << ave.get(i)->getRoll() << "seat: " << ave.get(i)->getSeat() << std::endl;
-    // }
     
-    // hall.getPerformences().get(0).BuyTicket(0,0);
-
-    // ave = hall.getPerformences().get(0).getTicktesWithStatus(bought);
-    // std::cout << ave;
-
-    // std::cout<<a<<b<<c;
+    office.BuyTicket("4", t+1, 2,2);
+    office.BuyTicket("4", t+1, 2,3);
+    office.BuyTicket("4", t+1, 3,3);
+    // office.PrintTicketsWithStatus("3", 0, aveilable);    
+    office.PrintTicketsWithStatus("ALL", t+1, bought);
     return 0;
     }
     catch(char const* error){
