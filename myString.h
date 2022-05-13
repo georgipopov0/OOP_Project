@@ -25,6 +25,10 @@ void print();
 int lenght();
  
 void pop_back();
+
+void removeChar(char);
+
+void replaceChar(char, char);
  
 myString concat(const char *);
  

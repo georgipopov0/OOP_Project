@@ -1,6 +1,7 @@
 #pragma once
 #include "Ticket.h"
 #include "Hall.h"
+#include <fstream>
 
 class TicketOffice
 {
@@ -9,10 +10,18 @@ private:
 
     Performence& findPerformence(myString title, std::time_t date )const;
     Hall& findHall(int hallId) const;
-    
+    void save(const char* filename);
 
 public:
-    TicketOffice():halls(Vector<Hall>()){}
+    TicketOffice():halls(Vector<Hall>()){
+        std::ifstream in;
+        in.open("savefile.txt");
+        if (in.is_open())
+        {
+            in >> *this;
+        }
+        
+    }
     
     void addHall(Hall);
     void addPerformence(const char* title, time_t date, int hallId);

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "myString.h"
+#include "myVector.h"
 using namespace std;
  
 
@@ -68,7 +69,24 @@ void myString::pop_back(){
     delete[] str;
     this->str = temp;
 }
- 
+
+void myString::removeChar(char ch){
+    Vector<char> tmp;
+    int size = lenght() +1;
+    for (int i = 0; i < size; i++)
+    {
+        if(this->str[i] != ch){
+            tmp.push(str[i]);
+        }
+    }
+    delete this->str;
+    this->str = new char[tmp.size()];
+    for (int i = 0; i < tmp.size(); i++)
+    {
+        str[i] = tmp.get(i);
+    }
+}
+
 myString myString::concat(const char *str){
     int n = strlen(this->str) + strlen(str) + 1;
     char *temp = new char[n];
@@ -84,7 +102,18 @@ myString myString::concat(const char *str){
     this->str = temp;
     return *this;
 }
- 
+
+void myString::replaceChar(char oldChar, char newChar){
+    int size = this->lenght() +1;
+    for (int i = 0; i < size; i++)
+    {
+        if(this->str[i] == oldChar){
+            this->str[i] = newChar;
+        }
+    }
+    
+}
+
 myString myString::concat(const myString &s){
     concat(s.str);
     return *this;

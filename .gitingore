@@ -1,9 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,c++
 
+
+
 ### C++ ###
 # Prerequisites
 *.d
+
 
 # Compiled Object files
 *.slo
@@ -45,6 +48,7 @@
 
 # Local History for Visual Studio Code
 .history/
+  
 
 # Built Visual Studio Code Extensions
 *.vsix
@@ -60,4 +64,7 @@
 # Ignore code-workspaces
 *.code-workspace
 
+# Ather
+*.txt
+report*
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++

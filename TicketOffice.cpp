@@ -1,18 +1,6 @@
 #include "TicketOffice.h"
 #include <cstring>
-#include <fstream>
 #include <stdlib.h>
-
-// The hardcode is real
-// (had to put it here or the linker gets angry)
-std::ostream& operator<<(std::ostream& os, const Vector<Ticket*>& vec){
-    int size = vec.size();
-    for (int i = 0; i < size; i++)
-    {
-        os << "(" << vec.get(i)->getRoll() << "," << vec.get(i)->getSeat() << ")" <<std::endl;
-    }
-    return os;
-}
 
 
 Performence& TicketOffice::findPerformence(myString title, std::time_t date) const{
@@ -38,14 +26,24 @@ Hall& TicketOffice::findHall(int hallId) const{
     throw "Hall not found";
 }
 
+void TicketOffice::save(const char* filename){
+    std::ofstream of;
+    of.open(filename);
+    of << *this;
+    of.close();
+}
+
+
 void TicketOffice::addHall(Hall hall){
     this->halls.push(hall);
+    save("savefile.txt");
 }
 
 
 void TicketOffice::addPerformence(const char* title, time_t date, int hallId){
     Hall& hall = findHall(hallId);
     hall.addPerformence(Performence(date, myString(title)));
+    save("savefile.txt");
 }
 
 const Vector<Hall>& TicketOffice::getHalls()const{
@@ -56,6 +54,7 @@ const Vector<Hall>& TicketOffice::getHalls()const{
 
 void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, TicketStatus status)const{
     // Eqivalent to ALL
+    std::ofstream of;
     if(date == 0){
         int halls_size = halls.size();
         for (int i = 0; i < halls_size; i++)
@@ -66,9 +65,23 @@ void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, Ticket
             for (int i = 0; i < perf_size; i++)
             {
                 time_t time = performences.get(i)->getDate();
+                //Print to console
                 std::cout << "-----------------------------------" << std::endl
                         << performences.get(i)->getTitle().getChar() << " " << ctime(&time) << std::endl
                         << ": "  << performences.get(i)->getTicktesWithStatus(status);
+            
+
+                //Save to file
+                myString filename = myString("report-").concat(performences.get(i)->getTitle()).concat("-").concat(ctime(&date));
+                filename.pop_back();
+                filename.concat(".txt");
+                filename.replaceChar(' ', '_');
+                filename.replaceChar(':', ';');
+                
+                of.open(filename.getChar());
+                of << performences.get(i)->getTicktesWithStatus(status);
+                of.close();
+
             }
             }catch(char const*){
                 std::cout << "wtd";
@@ -85,9 +98,21 @@ void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, Ticket
             int perf_size = performences.size();
             for (int i = 0; i < perf_size; i++)
             {
+                //to console
                 std::cout << "-----------------------------------" << std::endl
                         << performences.get(i)->getTitle().getChar() << std::endl
                         << ": "  << performences.get(i)->getTicktesWithStatus(status)<<std::endl;
+            
+                // to file
+                myString filename = myString("report-").concat(performences.get(i)->getTitle()).concat("-").concat(ctime(&date));
+                filename.pop_back();
+                filename.concat(".txt");
+                filename.replaceChar(' ', '_');
+                filename.replaceChar(':', ';');
+
+                of.open(filename.getChar());
+                of << performences.get(i)->getTicktesWithStatus(status);
+                of.close();
             }
             }catch(char const*){
                 //change that later
@@ -98,7 +123,19 @@ void TicketOffice::PrintTicketsWithStatus(const char* title, time_t date, Ticket
     else{
         Performence& performence = findPerformence(title, date);
         Vector<Ticket*> tickets = performence.getTicktesWithStatus(status);
+        
+        // to console
         std::cout << tickets;
+
+        // to file
+         myString filename = myString("report-").concat(performence.getTitle()).concat("-").concat(ctime(&date));
+        filename.pop_back();
+        filename.concat(".txt");
+        filename.replaceChar(' ', '_');
+        filename.replaceChar(':', ';');
+        of.open(filename.getChar(), std::ofstream::out);
+        of << tickets;
+        of.close();
     }
 }
 
@@ -140,14 +177,28 @@ void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
 // magic can be used here ...
 void TicketOffice::ReservTicket(const char* title, time_t date, int roll, int seat, myString pass, myString description = myString()){
     this->findPerformence(title,date).ReserveTicket(roll, seat, pass, description);
+    save("savefile.txt");
 }
 
 void TicketOffice::CancelReservation(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).CancelReservation(roll, seat);
+    save("savefile.txt");
 }
 
 void TicketOffice::BuyTicket(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).BuyTicket(roll, seat);
+    save("savefile.txt");
+}
+
+// The hardcode is real
+// (had to put it here or the linker gets angry)
+std::ostream& operator<<(std::ostream& os, const Vector<Ticket*>& vec){
+    int size = vec.size();
+    for (int i = 0; i < size; i++)
+    {
+        os << "(" << vec.get(i)->getRoll() << "," << vec.get(i)->getSeat() << ")" <<std::endl;
+    }
+    return os;
 }
 
 std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOffice){

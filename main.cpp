@@ -38,21 +38,22 @@ int main(int argc, char const *argv[])
     office.BuyTicket("4", t+1, 2,3);
     office.BuyTicket("4", t+1, 3,3);
 
-    office.PrintTicketsWithStatus("1", 0, reserved);    
-    // office.PrintTicketsWithStatus("ALL", t+1, bought);
+    // office.PrintTicketsWithStatus("1", 0, reserved);    
+    // office.PrintTicketsWithStatus("1", t, available);
+    office.PrintTicketsWithStatus("ALL", t+1, bought);
     // office.PrintBouthTicketsForHall(-1);
 
-    TicketOffice test;
-    std::ifstream myFile;
-    myFile.open("test.txt");
-    myFile >> test;
-    myFile.close();
+    // TicketOffice test;
+    // std::ifstream myFile;
+    // myFile.open("test.txt");
+    // myFile >> test;
+    // myFile.close();
     
     // test.PrintTicketsWithStatus("4",t+1,bought);
-    for (int i = 0; i < test.getHalls().size(); i++)
-    {
-        std::cout << test.getHalls().get(i).getHallId();
-    }
+    // for (int i = 0; i < test.getHalls().size(); i++)
+    // {
+    //     std::cout << test.getHalls().get(i).getHallId();
+    // }
     
     }
     catch(char const* error){
