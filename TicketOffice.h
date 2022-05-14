@@ -13,22 +13,19 @@ private:
     void save(const char* filename);
 
 public:
-    TicketOffice():halls(Vector<Hall>()){
-        std::ifstream in;
-        in.open("savefile.txt");
-        if (in.is_open())
-        {
-            in >> *this;
-        }
-        
-    }
+
+    TicketOffice():halls(Vector<Hall>()){}
+
+    TicketOffice(const char * filename);
+
     
     void addHall(Hall);
     void addPerformence(const char* title, time_t date, int hallId);
     
     const Vector<Hall>& getHalls()const;
     
-    void PrintTicketsWithStatus(const char*, time_t, TicketStatus)const;
+    void PrintTicketsWithStatusToConsole(const char*, time_t, TicketStatus)const;
+    void PrintTicketsWithStatusToFile(const char*, time_t, TicketStatus)const;
     void PrintBouthTicketsForHall(int) const;
     
     void ReservTicket(const char*, time_t, int, int, myString, myString);
