@@ -355,6 +355,7 @@ std::ostream& operator<<(std::ostream& os, const Vector<Ticket*>& vec){
  * @return std::ofstream& 
  */
 std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOffice){
+    // std::cout << ticketOffice.getHalls().get(0).getPerformences().get(0).getTickets().get(0)->getStatus();
     int hall_count = ticketOffice.halls.size();
     for (int i = 0; i < hall_count; i++)
     {
@@ -460,10 +461,14 @@ std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
                     tmpTickets.push((Ticket*)(new ReservedTicket(Ticket(std::atoi(roll),std::atoi(seat)),pass,desc)));
                 }
                 is.get();
-                // performence->UpdateTickets(tmpTickets);
             }
+            performence->UpdateTickets(tmpTickets);
+            // std::cout << performence->getTickets().get(0)->getStatus();
+            performence = nullptr;
         }
+        // std::cout << hall.getPerformences().get(0).getTickets().get(0)->getStatus();
         halls.push(hall);
+        // std::cout << halls.get(0).getPerformences().get(0).getTickets().get(0)->getStatus();
     }
     for (int i = 0; i < halls.size(); i++)
     {

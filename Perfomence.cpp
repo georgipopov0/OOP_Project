@@ -21,7 +21,15 @@ void Performance::deleteTickets(){
 void Performance::copyTickets(const Performance& performence){
     for (int i = 0; i < performence.tickets.size(); i++)
     {
-        this->tickets.push(new Ticket(*performence.tickets.get(i)));
+        if(performence.tickets.get(i)->getStatus() == available){
+            this->tickets.push(new Ticket(*performence.tickets.get(i)));
+        }
+        if(performence.tickets.get(i)->getStatus() == bought){
+            this->tickets.push((Ticket*)(new BoughtTicket(*performence.tickets.get(i))));
+        }
+        if(performence.tickets.get(i)->getStatus() == reserved){
+            this->tickets.push((Ticket*)(new ReservedTicket(*((ReservedTicket*)(performence.tickets.get(i))))));
+        }
     }
 }
 
@@ -244,7 +252,7 @@ void Performance::UpdateTicket(Ticket* newTicket){
  * 
  * @param tickets 
  */
-void Performance::UpdateTickets(Vector<Ticket*> tickets){
+void Performance::UpdateTickets(const Vector<Ticket*>& tickets){
     deleteTickets();
     this->tickets = tickets;
 }

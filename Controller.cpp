@@ -91,20 +91,20 @@ void Controller::printAvailable(){
  */
 void Controller::reserveTicket(){
     char title[256];
-    std::cout << "Title :" << std::endl;
+    std::cout << "Title: " ;
     std::cin >> title;
     time_t date = dateForm();
     char roll[4];
-    std::cout << "Roll:" << std::endl;
+    std::cout << "Roll: ";
     std::cin >> roll;
     char seat[4];
-    std::cout << "Seat:" << std::endl;
+    std::cout << "Seat: " ;
     std::cin >> seat;
     char pass[64];
-    std::cout << "Password:" << std::endl;
+    std::cout << "Password: ";
     std::cin >> pass;
     char desc[256];
-    std::cout << "Description:" << std::endl;
+    std::cout << "Description: ";
     std::cin >> desc;
 
     office.ReservTicket(title, date,  std::atoi(roll),  std::atoi(seat), pass, desc);
@@ -117,14 +117,14 @@ void Controller::reserveTicket(){
  */
 void Controller::cancelReservation(){
     char title[256];
-    std::cout << "Title :" << std::endl;
+    std::cout << "Title: " ;
     std::cin >> title;
     time_t date = dateForm();
     char roll[4];
-    std::cout << "Roll:" << std::endl;
+    std::cout << "Roll: " ;
     std::cin >> roll;
     char seat[4];
-    std::cout << "Seat:" << std::endl;
+    std::cout << "Seat: ";
     std::cin >> seat;
 
     office.CancelReservation(title, date,  std::atoi(roll),  std::atoi(seat));
@@ -137,14 +137,14 @@ void Controller::cancelReservation(){
  */
 void Controller::buyTicket(){
     char title[256];
-    std::cout << "Title :" << std::endl;
+    std::cout << "Title: ";
     std::cin >> title;
     time_t date = dateForm();
     char roll[4];
-    std::cout << "Roll:" << std::endl;
+    std::cout << "Roll: ";
     std::cin >> roll;
     char seat[4];
-    std::cout << "Seat:" << std::endl;
+    std::cout << "Seat: ";
     std::cin >> seat;
 
     office.BuyTicket(title, date,  std::atoi(roll),  std::atoi(seat));
@@ -155,7 +155,7 @@ void Controller::buyTicket(){
  * 
  */
 void Controller::printReservations(){
-    std::cout << "Title :" << std::endl;
+    std::cout << "Title :";
     char title[256];
     std::cin >> title;
     time_t time = dateForm();
@@ -168,8 +168,12 @@ void Controller::printReservations(){
  */
 void Controller::printBoughtTicketsForHall(){
     char hallId[4];
-    std::cout << "Hall id:";
+    std::cout << "Hall id: ";
     std::cin >> hallId;
+    if(!strcmp("ALL", hallId)){
+            office.PrintBouthTicketsForHall(0);
+            return;
+    }
 
     office.PrintBouthTicketsForHall( std::atoi(hallId));
 }
@@ -198,7 +202,7 @@ void Controller::init(){
                 break;
 
             case '3':
-                ReservedTicket();
+                reserveTicket();
                 break;
 
             case '4':

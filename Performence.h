@@ -36,5 +36,5 @@ public:
 
     //Hardcode for file reading
     void UpdateTicket(Ticket* newTicket);
-    void UpdateTickets(Vector<Ticket*> tickets);
+    void UpdateTickets( const Vector<Ticket*>& tickets);
 };
