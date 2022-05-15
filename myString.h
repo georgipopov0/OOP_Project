@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * @brief Takes care of the dinamic memory for char arrays.
+ * 
+ */
 class myString{
 private:
     char *str;
@@ -30,9 +34,9 @@ void removeChar(char);
 
 void replaceChar(char, char);
  
-myString concat(const char *);
+myString& concat(const char *);
  
-myString concat(const myString &);
+myString& concat(const myString &);
 
 const char* getChar()const;
 };

@@ -7,6 +7,10 @@
         reserved = 3
     };
 
+/**
+ * @brief Base class for all ticket classes.
+ * 
+ */
 class Ticket
 {
 protected:

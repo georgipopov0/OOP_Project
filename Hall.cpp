@@ -1,9 +1,24 @@
 #include "Hall.h"
 #include <cstring>
 
-Hall::Hall(int hallId, Vector<Performence> performences, int rolls, int seats)
+
+/**
+ * @brief Construct a new Hall:: Hall object
+ * 
+ * @param hallId Id.
+ * @param performences Linst of performences.
+ * @param rolls Number of rolls in the hall.
+ * @param seats Number of seats per roll.
+ */
+Hall::Hall(int hallId, Vector<Performance> performences, int rolls, int seats)
     :hallId(hallId), performences(performences), rolls(rolls), seats(seats){}
 
+
+/**
+ * @brief Copu constructor for hall.
+ * 
+ * @param hall 
+ */
 Hall::Hall(const Hall& hall){
     this->hallId = hall.hallId;
     this->performences = hall.performences;
@@ -11,23 +26,48 @@ Hall::Hall(const Hall& hall){
     this->seats = hall.seats;
 }
 
+/**
+ * @brief 
+ * 
+ * @return int Hall id.
+ */
 int Hall::getHallId()const{
     return hallId;
 }
 
-const Vector<Performence>& Hall::getPerformences()const{
+/**
+ * @brief 
+ * 
+ * @return Vector<Performence>&;
+ */
+const Vector<Performance>& Hall::getPerformences()const{
     return performences;
 }
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
 int Hall::getRolls()const{
     return rolls;
 }
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
 int Hall::getSeats()const{
     return seats;
 }
 
-void Hall::addPerformence(Performence performence){
+/**
+ * @brief adds performence to the Hall
+ * 
+ * @param performence 
+ */
+void Hall::addPerformence(Performance performence){
     int performenceCount = performences.size();
 
     for (int i = 0; i < performenceCount; i++)
@@ -41,9 +81,16 @@ void Hall::addPerformence(Performence performence){
 
 }
 
-Performence* Hall::findPerformence(myString title, std::time_t date)const{
+/**
+ * @brief Finds performence by title and date.
+ * 
+ * @param title Title of the performence.
+ * @param date  Date of the performence.
+ * @return Pointer to the performence or nullptr if the performence doesnt exist.
+ */
+Performance* Hall::findPerformence(myString title, std::time_t date)const{
     for (int i = 0; i < performences.size(); i++){
-        Performence& performence = performences.get(i);
+        Performance& performence = performences.get(i);
         if(!strcmp(performence.getTitle().getChar(), title.getChar()) 
             && performence.getDate() == date){
                 return &performence;
@@ -52,10 +99,16 @@ Performence* Hall::findPerformence(myString title, std::time_t date)const{
     return nullptr;
 }
 
-Vector<Performence*> Hall::findPerformence(myString title)const{
-    Vector<Performence*> tmpPerformences;
+/**
+ * @brief Finds all performences with the given title
+ * 
+ * @param title Title of the performences.
+ * @return Vector<Performence*> Vector with refferences to the found performances.
+ */
+Vector<Performance*> Hall::findPerformence(myString title)const{
+    Vector<Performance*> tmpPerformences;
     for (int i = 0; i < performences.size(); i++){
-        Performence& performence = performences.get(i);
+        Performance& performence = performences.get(i);
         if(!strcmp(performence.getTitle().getChar(), title.getChar())){
                 tmpPerformences.push(&performence);
         }
@@ -63,10 +116,17 @@ Vector<Performence*> Hall::findPerformence(myString title)const{
     return tmpPerformences;
 }
 
-Vector<Performence*> Hall::findPerformence(std::time_t date)const{
-    Vector<Performence*> tmpPerformences;
+
+/**
+ * @brief Finds all performances with the given date.
+ * 
+ * @param date Date of the performences.
+ * @return Vector<Performence*> Vector with refferences to the found performances.
+ */
+Vector<Performance*> Hall::findPerformence(std::time_t date)const{
+    Vector<Performance*> tmpPerformences;
     for (int i = 0; i < performences.size(); i++){
-        Performence& performence = performences.get(i);
+        Performance& performence = performences.get(i);
         if(performence.getDate() == date){
                 tmpPerformences.push(&performence);
         }

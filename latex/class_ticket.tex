@@ -1,0 +1,121 @@
+\hypertarget{class_ticket}{}\doxysection{Ticket Class Reference}
+\label{class_ticket}\index{Ticket@{Ticket}}
+
+
+Base class for all ticket classes.  
+
+
+
+
+{\ttfamily \#include $<$Ticket.\+h$>$}
+
+Inheritance diagram for Ticket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ticket}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ticket_aba3a46c9223efb6ab0bde93a09403537}{Ticket}} ()
+\item 
+\mbox{\hyperlink{class_ticket_a69551a8de4d4d23173f02615f48719d7}{Ticket}} (int, int)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_ticket}{Ticket}}\+:\+: \mbox{\hyperlink{class_ticket}{Ticket}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}} \mbox{\hyperlink{class_ticket_a9a5d67e4d180d6aa2902ec436eb671b9}{get\+Status}} () const
+\item 
+int \mbox{\hyperlink{class_ticket_a9bcffd8d57cc23cf1e4875744861d860}{get\+Roll}} () const
+\item 
+int \mbox{\hyperlink{class_ticket_a4bb39d306f98774c96305afd7887e376}{get\+Seat}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_ticket_aa07914b3b4ff1029ea4e2ba0b50bd6d8}{roll}}
+\item 
+int \mbox{\hyperlink{class_ticket_a0e721f9d14e04471b65264c22403b202}{seat}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all ticket classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ticket_aba3a46c9223efb6ab0bde93a09403537}\label{class_ticket_aba3a46c9223efb6ab0bde93a09403537}} 
+\index{Ticket@{Ticket}!Ticket@{Ticket}}
+\index{Ticket@{Ticket}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{Ticket()}{Ticket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ticket\+::\+Ticket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_ticket_a69551a8de4d4d23173f02615f48719d7}\label{class_ticket_a69551a8de4d4d23173f02615f48719d7}} 
+\index{Ticket@{Ticket}!Ticket@{Ticket}}
+\index{Ticket@{Ticket}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{Ticket()}{Ticket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ticket\+::\+Ticket (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_ticket}{Ticket}}\+:\+: \mbox{\hyperlink{class_ticket}{Ticket}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roll} & \\
+\hline
+{\em seat} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ticket_a9bcffd8d57cc23cf1e4875744861d860}\label{class_ticket_a9bcffd8d57cc23cf1e4875744861d860}} 
+\index{Ticket@{Ticket}!getRoll@{getRoll}}
+\index{getRoll@{getRoll}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{getRoll()}{getRoll()}}
+{\footnotesize\ttfamily int Ticket\+::get\+Roll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ticket_a4bb39d306f98774c96305afd7887e376}\label{class_ticket_a4bb39d306f98774c96305afd7887e376}} 
+\index{Ticket@{Ticket}!getSeat@{getSeat}}
+\index{getSeat@{getSeat}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{getSeat()}{getSeat()}}
+{\footnotesize\ttfamily int Ticket\+::get\+Seat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ticket_a9a5d67e4d180d6aa2902ec436eb671b9}\label{class_ticket_a9a5d67e4d180d6aa2902ec436eb671b9}} 
+\index{Ticket@{Ticket}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}} Ticket\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+Ticket\+Status 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_bought_ticket_a7d39c6e16313a182749588a0214a707f}{Bought\+Ticket}}, and \mbox{\hyperlink{class_reserved_ticket_a1745c51b9657f42d74159ef9ed5b9644}{Reserved\+Ticket}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ticket_aa07914b3b4ff1029ea4e2ba0b50bd6d8}\label{class_ticket_aa07914b3b4ff1029ea4e2ba0b50bd6d8}} 
+\index{Ticket@{Ticket}!roll@{roll}}
+\index{roll@{roll}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{roll}{roll}}
+{\footnotesize\ttfamily int Ticket\+::roll\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_ticket_a0e721f9d14e04471b65264c22403b202}\label{class_ticket_a0e721f9d14e04471b65264c22403b202}} 
+\index{Ticket@{Ticket}!seat@{seat}}
+\index{seat@{seat}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{seat}{seat}}
+{\footnotesize\ttfamily int Ticket\+::seat\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ticket_8h}{Ticket.\+h}}\item 
+\mbox{\hyperlink{_ticket_8cpp}{Ticket.\+cpp}}\end{DoxyCompactItemize}

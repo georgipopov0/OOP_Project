@@ -1,6 +1,11 @@
 #pragma once
 #include "TicketOffice.h"
 
+
+/**
+ * @brief Handles the user interactions.
+ * 
+ */
 class Controller
 {
 private:
@@ -17,6 +22,10 @@ private:
     void printReservations();
     void printBoughtTicketsForHall();
 public:
+    /**
+     * @brief Construct a new Controller object fom a savefile
+     * 
+     */
     Controller():office(TicketOffice("savefile.txt")){}
     void init();
 };

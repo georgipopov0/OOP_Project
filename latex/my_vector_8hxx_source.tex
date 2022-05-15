@@ -1,0 +1,102 @@
+\hypertarget{my_vector_8hxx_source}{}\doxysection{my\+Vector.\+hxx}
+\mbox{\hyperlink{my_vector_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{8 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}{Vector<T>::push}}(T element)\{}
+\DoxyCodeLine{9     \textcolor{keywordflow}{if}(elemCount == capacity)\{}
+\DoxyCodeLine{10         T* tmp = \textcolor{keyword}{new} T[capacity*2];}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < capacity; i++)}
+\DoxyCodeLine{13         \{}
+\DoxyCodeLine{14             tmp[i] = elements[i];}
+\DoxyCodeLine{15         \}}
+\DoxyCodeLine{16         \textcolor{keyword}{delete}[] elements;}
+\DoxyCodeLine{17         elements = tmp;}
+\DoxyCodeLine{18         capacity *=2;}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     elements[elemCount] = element;}
+\DoxyCodeLine{21     elemCount++; }
+\DoxyCodeLine{22 \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{30 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{31 \mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector<T>::Vector}}(\mbox{\hyperlink{class_vector}{Vector<T>}}\& vector)\{}
+\DoxyCodeLine{32     this-\/>capacity = vector.capacity;}
+\DoxyCodeLine{33     this-\/>elements = \textcolor{keyword}{new} T[vector.capacity];}
+\DoxyCodeLine{34     this-\/>elemCount = vector.elemCount;}
+\DoxyCodeLine{35     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vector.elemCount; i++)}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         this-\/>elements[i] = vector.elements[i];}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{48 \mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector<T>::Vector}}(\mbox{\hyperlink{class_vector}{Vector<T>}}\&\& vector)\{}
+\DoxyCodeLine{49     capacity = vector.capacity;}
+\DoxyCodeLine{50     elemCount = vector.elemCount;}
+\DoxyCodeLine{51     elements = vector.elements;}
+\DoxyCodeLine{52     vector.elements = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{53     vector.capacity = 0;}
+\DoxyCodeLine{54     vector.elemCount = 0;}
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{64 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{65 \mbox{\hyperlink{class_vector}{Vector<T>}}\& \mbox{\hyperlink{class_vector_a8d6906176604f2201919991acf655d13}{Vector<T>::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vector}{Vector<T>}}\& vector)\{}
+\DoxyCodeLine{66     \textcolor{keyword}{delete}[] this-\/>elements;}
+\DoxyCodeLine{67     this-\/>capacity = vector.capacity;}
+\DoxyCodeLine{68     this-\/>elements = \textcolor{keyword}{new} T[vector.capacity];}
+\DoxyCodeLine{69     this-\/>elemCount = vector.elemCount;}
+\DoxyCodeLine{70     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vector.elemCount; i++)}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72         this-\/>elements[i] = vector.elements[i];}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{75 \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{84 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{85 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}{Vector<T>::push}}(T element, \textcolor{keywordtype}{int} index)\{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{if}(index>capacity)\{}
+\DoxyCodeLine{87         \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Inex out of range"{}};}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     \textcolor{keywordflow}{if}(index==capacity)\{}
+\DoxyCodeLine{90         this-\/>push(element);}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{93         elements[index] = element;}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 \} }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{103 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{104 T \mbox{\hyperlink{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}{Vector<T>::pop}}()\{}
+\DoxyCodeLine{105     elemCount-\/-\/;}
+\DoxyCodeLine{106     \textcolor{keywordflow}{return} this-\/>elements[elemCount];}
+\DoxyCodeLine{107 \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{116 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{117 T\& \mbox{\hyperlink{class_vector_ad3536c41e3602ec6cf8eed42ef7389e3}{Vector<T>::get}}(\textcolor{keywordtype}{int} index)\textcolor{keyword}{const}\{}
+\DoxyCodeLine{118     \textcolor{keywordflow}{if}(index > elemCount || index < 0)\{}
+\DoxyCodeLine{119         \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}inex out of range"{}};}
+\DoxyCodeLine{120     \}}
+\DoxyCodeLine{121     \textcolor{keywordflow}{return} elements[index];}
+\DoxyCodeLine{122 \}}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{130 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{131 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_vector_a196e9eedc9a88a48f64e69e39405fa72}{Vector<T>::size}}()\textcolor{keyword}{const}\{}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} elemCount;}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{141 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{142 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_vector_ae542d4e0e22981b211a40f9a1a58b16f}{Vector<T>::getCapacity}}()\textcolor{keyword}{const}\{}
+\DoxyCodeLine{143     \textcolor{keywordflow}{return} capacity;}
+\DoxyCodeLine{144 \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{151 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{152 \mbox{\hyperlink{class_vector_afd524fac19e6d3d69db5198ffe2952b0}{Vector<T>::\string~Vector}}()\{}
+\DoxyCodeLine{153     \textcolor{keyword}{delete}[] elements;}
+\DoxyCodeLine{154     elemCount=0;}
+\DoxyCodeLine{155     capacity=0;}
+\DoxyCodeLine{156 \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 }
+
+\end{DoxyCode}

@@ -2,6 +2,10 @@
 #include <cstring>
 
 
+/**
+ * @brief Prints a manual.
+ * 
+ */
 void Controller::printBanner(){
     std::cout << "Options:" << std::endl 
         << "1) Add performence" << std::endl
@@ -14,6 +18,11 @@ void Controller::printBanner(){
         << "8) Exit" << std::endl;
 };
 
+/**
+ * @brief Starts a dialog for date input
+ * 
+ * @return time_t The date from the form in epoch format.
+ */
 time_t Controller::dateForm(){
     std::cout << "Date\n";
     std::tm time;
@@ -46,6 +55,10 @@ time_t Controller::dateForm(){
     return mktime(&time);
 };
 
+/**
+ * @brief Starts a dialog for adding a new performance
+ * 
+ */
 void Controller::addPerformence(){
     char title[256];
     std::cout << "Title: ";
@@ -59,6 +72,10 @@ void Controller::addPerformence(){
     office.addPerformence(title, time, std::atoi(hallId));
 };
 
+/**
+ * @brief Prints available tickets for a given performance.
+ * 
+ */
 void Controller::printAvailable(){
     char title[256];
     std::cout << "Title :";
@@ -67,6 +84,11 @@ void Controller::printAvailable(){
     office.PrintTicketsWithStatusToConsole(title, time, available);
 };
 
+
+/**
+ * @brief Start a dialog for ticket reservation.
+ * 
+ */
 void Controller::reserveTicket(){
     char title[256];
     std::cout << "Title :" << std::endl;
@@ -88,6 +110,11 @@ void Controller::reserveTicket(){
     office.ReservTicket(title, date,  std::atoi(roll),  std::atoi(seat), pass, desc);
 };
 
+
+/**
+ * @brief Starts a dialog for reservation cancelation.
+ * 
+ */
 void Controller::cancelReservation(){
     char title[256];
     std::cout << "Title :" << std::endl;
@@ -103,6 +130,11 @@ void Controller::cancelReservation(){
     office.CancelReservation(title, date,  std::atoi(roll),  std::atoi(seat));
 }
 
+
+/**
+ * @brief Starts a dialog for buying tickets.
+ * 
+ */
 void Controller::buyTicket(){
     char title[256];
     std::cout << "Title :" << std::endl;
@@ -118,6 +150,10 @@ void Controller::buyTicket(){
     office.BuyTicket(title, date,  std::atoi(roll),  std::atoi(seat));
 }
 
+/**
+ * @brief Creats report files for the reservations.
+ * 
+ */
 void Controller::printReservations(){
     std::cout << "Title :" << std::endl;
     char title[256];
@@ -126,6 +162,10 @@ void Controller::printReservations(){
     office.PrintTicketsWithStatusToFile(title, time, reserved);
 }
 
+/**
+ * @brief Prints bought tickets for a performance
+ * 
+ */
 void Controller::printBoughtTicketsForHall(){
     char hallId[4];
     std::cout << "Hall id:";
@@ -134,6 +174,11 @@ void Controller::printBoughtTicketsForHall(){
     office.PrintBouthTicketsForHall( std::atoi(hallId));
 }
 
+
+/**
+ * @brief Intializes an infinite loop for command interpretation.
+ * 
+ */
 void Controller::init(){
     TicketOffice office;
     bool exit = 0;

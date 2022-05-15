@@ -1,0 +1,43 @@
+\hypertarget{_ticket_office_8h_source}{}\doxysection{Ticket\+Office.\+h}
+\mbox{\hyperlink{_ticket_office_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_ticket_8h}{Ticket.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_hall_8h}{Hall.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_ticket_office}{TicketOffice}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_vector}{Vector<Hall>}} halls;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \mbox{\hyperlink{class_performance}{Performance}}\& findPerformence(\mbox{\hyperlink{classmy_string}{myString}} title, std::time\_t date )\textcolor{keyword}{const};}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_hall}{Hall}}\& findHall(\textcolor{keywordtype}{int} hallId) \textcolor{keyword}{const};}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{26     \mbox{\hyperlink{class_ticket_office_a187e91118654b106131735126c530ad9}{TicketOffice}}():halls(\mbox{\hyperlink{class_vector}{Vector}}<\mbox{\hyperlink{class_hall}{Hall}}>())\{\}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_ticket_office_a187e91118654b106131735126c530ad9}{TicketOffice}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * filename);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_ac3987bc62c42619289eb2a661fa80d76}{addHall}}(\mbox{\hyperlink{class_hall}{Hall}});}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_a8ac594e8709eb86e1612f237c9d6aa24}{addPerformence}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* title, time\_t date, \textcolor{keywordtype}{int} hallId);}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{34     \textcolor{keyword}{const} \mbox{\hyperlink{class_vector}{Vector<Hall>}}\& \mbox{\hyperlink{class_ticket_office_a3a1e722534ea78459018d4c37a364a82}{getHalls}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{35     }
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_a1445e59ebbd593c49b7b7e1c9a775aeb}{PrintTicketsWithStatusToConsole}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, time\_t, \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{TicketStatus}})\textcolor{keyword}{const};}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_a0849254996f10a60cb9c33a180795899}{PrintTicketsWithStatusToFile}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, time\_t, \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{TicketStatus}})\textcolor{keyword}{const};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_ae2e225d5d9c11bfddb85c9ff375e9817}{PrintBouthTicketsForHall}}(\textcolor{keywordtype}{int}) \textcolor{keyword}{const};}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_a8c9f11f8ed64ee72a6b78b2cae494a7e}{ReservTicket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, time\_t, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int}, \mbox{\hyperlink{classmy_string}{myString}}, \mbox{\hyperlink{classmy_string}{myString}});}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_a9743654d6d56b3886d0e0de7da27e4e8}{CancelReservation}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, time\_t, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_ticket_office_a5584e4827a25cfa69fa58920a148d260}{BuyTicket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, time\_t, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keyword}{friend} std::ofstream\& \mbox{\hyperlink{class_ticket_office_a657dccec5b6d9f5df1d58f8f882239c5}{operator <<}}(std::ofstream \& output, \mbox{\hyperlink{class_ticket_office}{TicketOffice}} \textcolor{keyword}{const}\& ticketOffice);    }
+\DoxyCodeLine{45     \textcolor{keyword}{friend} std::ifstream\& \mbox{\hyperlink{class_ticket_office_ada66e1d8f03b1a65439db724e65d7023}{operator >>}}(std::ifstream\& is, \mbox{\hyperlink{class_ticket_office}{TicketOffice}}\& office);}
+\DoxyCodeLine{46 \};}
+
+\end{DoxyCode}

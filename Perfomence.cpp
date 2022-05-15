@@ -2,21 +2,37 @@
 #include "Performence.h"
 #include <cstring>
 
-void Performence::deleteTickets(){
+/**
+ * @brief Clears the allocated memmory for the tickets
+ * 
+ */
+void Performance::deleteTickets(){
     for (int i = 0; i < this->tickets.size(); i++)
     {
         delete this->tickets.get(i);
     }
 }
 
-void Performence::copyTickets(const Performence& performence){
+/**
+ * @brief Coppies the tickets of another performence.
+ * 
+ * @param performence 
+ */
+void Performance::copyTickets(const Performance& performence){
     for (int i = 0; i < performence.tickets.size(); i++)
     {
         this->tickets.push(new Ticket(*performence.tickets.get(i)));
     }
 }
 
-Ticket* &Performence::findTicket(int roll, int seat) const{
+/**
+ * @brief Find a ticket.
+ * 
+ * @param roll Roll of the ticket.
+ * @param seat Seat of the ticket.
+ * @return Ticket*& Referrence to the found ticket.
+ */
+Ticket* &Performance::findTicket(int roll, int seat) const{
     int rollSize = 0;
     for (int i = 0;  tickets.get(i)->getRoll() == tickets.get(i+1)->getRoll() ; i++)
     {
@@ -26,29 +42,56 @@ Ticket* &Performence::findTicket(int roll, int seat) const{
     return tickets.get(rollSize*roll + seat);
 }
 
-Performence::Performence(std::time_t date, myString title)
+
+/**
+ * @brief Construct a new Performence:: Performence object
+ * 
+ * @param date 
+ * @param title 
+ */
+Performance::Performance(std::time_t date, myString title)
 :date(date), title(title), tickets(Vector<Ticket*>()){}
 
 //not sure that this improves anything 
 //but im doing it anyway
-Performence::Performence(Performence&& performence){
+/**
+ * @brief Move constructor.
+ * 
+ * @param performence 
+ */
+Performance::Performance(Performance&& performence){
     this->date=performence.date;
     this->title=performence.title;
     this->tickets=performence.tickets;
     performence.tickets.~Vector();
 }
 
-Performence::Performence(const Performence &performence){
+/**
+ * @brief Copy constructor
+ * 
+ * @param performence 
+ */
+Performance::Performance(const Performance &performence){
     this->date = performence.date;
     this->title = performence.title;
     this->copyTickets(performence);
 }
 
-Performence::~Performence(){
+/**
+ * @brief Destroy the Performence:: Performence object
+ * 
+ */
+Performance::~Performance(){
     deleteTickets();
 }
 
-Performence& Performence::operator=(const Performence& performence){
+/**
+ * @brief Asignment operator
+ * 
+ * @param performence 
+ * @return Performence& 
+ */
+Performance& Performance::operator=(const Performance& performence){
     deleteTickets();
     copyTickets(performence);
     this->date = performence.date;
@@ -57,19 +100,40 @@ Performence& Performence::operator=(const Performence& performence){
     return *this;
 }
 
-myString Performence::getTitle()const{
+/**
+ * @brief 
+ * 
+ * @return myString Title of the performence.
+ */
+myString Performance::getTitle()const{
     return title;
 }
 
-std::time_t Performence::getDate()const{
+/**
+ * @brief 
+ * 
+ * @return std::time_t Date of the performence.
+ */
+std::time_t Performance::getDate()const{
     return date;
 }
 
-const Vector<Ticket*>& Performence::getTickets() const{
+/**
+ * @brief 
+ * 
+ * @return const Vector<Ticket*>& Refference to the tickets of the performance.
+ */
+const Vector<Ticket*>& Performance::getTickets() const{
     return tickets;
 }
 
-void Performence::generateTickets(int rolls, int seats){
+/**
+ * @brief Generates tickets for the specified amount of seats.
+ * 
+ * @param rolls Number of rolls.
+ * @param seats Number of seats per roll.
+ */
+void Performance::generateTickets(int rolls, int seats){
     this->tickets = Vector<Ticket*>();
     for (int i = 0; i < rolls; i++)
     {
@@ -81,7 +145,13 @@ void Performence::generateTickets(int rolls, int seats){
     
 }
 
-Vector<Ticket*> Performence::getTicktesWithStatus(TicketStatus status)const{
+/**
+ * @brief Finds all tickets with the specified status (available,reserved,bought).
+ * 
+ * @param status 
+ * @return Vector<Ticket*> Vector containing all tickets with the specified status.
+ */
+Vector<Ticket*> Performance::getTicktesWithStatus(TicketStatus status)const{
     Vector<Ticket*> availabelTickets;
     for (int i = 0; i < tickets.size(); i++)
     {
@@ -93,7 +163,15 @@ Vector<Ticket*> Performence::getTicktesWithStatus(TicketStatus status)const{
     return availabelTickets;
 }
 
-void Performence::ReserveTicket(int roll, int seat, myString password, myString descriprion){
+/**
+ * @brief Changes a ticket from Tieckt to ReservedTicket.
+ * 
+ * @param roll 
+ * @param seat 
+ * @param password 
+ * @param descriprion 
+ */
+void Performance::ReserveTicket(int roll, int seat, myString password, myString descriprion){
     Ticket* &ticket = findTicket(roll, seat);
     if(ticket->getStatus() != available){
         throw "Not available";
@@ -104,7 +182,13 @@ void Performence::ReserveTicket(int roll, int seat, myString password, myString 
     reserved = nullptr;
 }
 
-void Performence::CancelReservation(int roll, int seat){
+/**
+ * @brief Returns ticket from ReservedTicket to Ticket
+ * 
+ * @param roll 
+ * @param seat 
+ */
+void Performance::CancelReservation(int roll, int seat){
     Ticket* &reservedTicket = findTicket(roll, seat);
     if(reservedTicket->getStatus() != reserved){
         throw "Not reserved";
@@ -114,7 +198,13 @@ void Performence::CancelReservation(int roll, int seat){
     reservedTicket = availableTicket; 
 }
 
-void Performence::BuyTicket(int roll, int seat){
+/**
+ * @brief Changes a ticket to BoughtTicket.
+ * 
+ * @param roll 
+ * @param seat 
+ */
+void Performance::BuyTicket(int roll, int seat){
     Ticket* &ticket = findTicket(roll, seat);
     
     if(ticket->getStatus() == bought){
@@ -138,12 +228,23 @@ void Performence::BuyTicket(int roll, int seat){
     boughtTicket = nullptr;
 }
 
-void Performence::UpdateTicket(Ticket* newTicket){
+/**
+ * @brief Replace a Ticket.
+ * 
+ * @param newTicket 
+ */
+void Performance::UpdateTicket(Ticket* newTicket){
     Ticket*& tmp = findTicket(newTicket->getRoll(), newTicket->getSeat());
     delete tmp;
     tmp = newTicket;
 }
 
-void Performence::UpdateTickets(Vector<Ticket*> tickets){
+/**
+ * @brief Replaces all tickets
+ * 
+ * @param tickets 
+ */
+void Performance::UpdateTickets(Vector<Ticket*> tickets){
+    deleteTickets();
     this->tickets = tickets;
 }

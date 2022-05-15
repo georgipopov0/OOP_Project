@@ -1,0 +1,28 @@
+\hypertarget{_ticket_8h_source}{}\doxysection{Ticket.\+h}
+\mbox{\hyperlink{_ticket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3     \textcolor{comment}{// Not sure where to put the enum}}
+\DoxyCodeLine{4     \textcolor{keyword}{enum} \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{TicketStatus}}\{}
+\DoxyCodeLine{5         \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446da5d20e160566f0b85357fd5a3c87a985e}{available}} = 1,}
+\DoxyCodeLine{6         \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446da71228d08e010a6bb1e3a19643684204e}{bought}} = 2,}
+\DoxyCodeLine{7         \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446dac6638028c1aba75eca7eed225800ad5b}{reserved}} = 3}
+\DoxyCodeLine{8     \};}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_ticket}{Ticket}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ticket_aa07914b3b4ff1029ea4e2ba0b50bd6d8}{roll}};}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ticket_a0e721f9d14e04471b65264c22403b202}{seat}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_ticket_aba3a46c9223efb6ab0bde93a09403537}{Ticket}}():\mbox{\hyperlink{class_ticket_aa07914b3b4ff1029ea4e2ba0b50bd6d8}{roll}}(0), \mbox{\hyperlink{class_ticket_a0e721f9d14e04471b65264c22403b202}{seat}}(0)\{\}}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_ticket_aba3a46c9223efb6ab0bde93a09403537}{Ticket}}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{TicketStatus}} \mbox{\hyperlink{class_ticket_a9a5d67e4d180d6aa2902ec436eb671b9}{getStatus}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ticket_a9bcffd8d57cc23cf1e4875744861d860}{getRoll}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_ticket_a4bb39d306f98774c96305afd7887e376}{getSeat}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{27 \};}
+
+\end{DoxyCode}

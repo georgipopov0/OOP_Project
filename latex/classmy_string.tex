@@ -1,0 +1,246 @@
+\hypertarget{classmy_string}{}\doxysection{my\+String Class Reference}
+\label{classmy_string}\index{myString@{myString}}
+
+
+Takes care of the dinamic memory for char arrays.  
+
+
+
+
+{\ttfamily \#include $<$my\+String.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_string_ab188153281123d6f39512d47c98d024b}{my\+String}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new my String\+::my String object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string_af6412feb623f775aa000984ed057fea7}{my\+String}} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em Construct a new my String\+::my String object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string_aaa559b403bfe4943ca52ee4a4a6ed21b}{my\+String}} (const \mbox{\hyperlink{classmy_string}{my\+String}} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string_a9edf8e3c899989776bced286841c88f5}{my\+String}} (\mbox{\hyperlink{classmy_string}{my\+String}} \&\&)
+\begin{DoxyCompactList}\small\item\em Move consructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string}{my\+String}} \& \mbox{\hyperlink{classmy_string_a7eff9317ef12b27140a8069334f98816}{operator=}} (const \mbox{\hyperlink{classmy_string}{my\+String}} \&)
+\begin{DoxyCompactList}\small\item\em Assaingment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string_adbbf90a69973f333edbbd0d8d8cef789}{$\sim$my\+String}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the my String\+::my String object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_string_a07cae357a37d4d340ce50d739cc3c758}{print}} ()
+\item 
+int \mbox{\hyperlink{classmy_string_ac99cbafc75e8bb5eac2b610d6b3c6a7a}{lenght}} ()
+\item 
+void \mbox{\hyperlink{classmy_string_a159bb29fca4ca92ccc6e9fca0d289ab0}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em Remove last char. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_string_ae5f1c458c5767f8bfbbdebcc139118a6}{remove\+Char}} (char)
+\begin{DoxyCompactList}\small\item\em Remove all appearances of a given char. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_string_a5ae5f95b84e0253c99f5e250c23e90b4}{replace\+Char}} (char, char)
+\begin{DoxyCompactList}\small\item\em Replacese all appearances of a char. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string}{my\+String}} \& \mbox{\hyperlink{classmy_string_a1f9f7542f2e2fdab3ad6e595196ad25b}{concat}} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em Append a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string}{my\+String}} \& \mbox{\hyperlink{classmy_string_a5657b7aa57acd63992603dc7495e7537}{concat}} (const \mbox{\hyperlink{classmy_string}{my\+String}} \&)
+\begin{DoxyCompactList}\small\item\em Append a string. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classmy_string_ac23ebfea0a4f0d5af9299055144ed5f5}{get\+Char}} () const
+\begin{DoxyCompactList}\small\item\em Returns the char array corespondint to the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Takes care of the dinamic memory for char arrays. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_string_ab188153281123d6f39512d47c98d024b}\label{classmy_string_ab188153281123d6f39512d47c98d024b}} 
+\index{myString@{myString}!myString@{myString}}
+\index{myString@{myString}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{myString()}{myString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily my\+String\+::my\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new my String\+::my String object. 
+
+\mbox{\Hypertarget{classmy_string_af6412feb623f775aa000984ed057fea7}\label{classmy_string_af6412feb623f775aa000984ed057fea7}} 
+\index{myString@{myString}!myString@{myString}}
+\index{myString@{myString}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{myString()}{myString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily my\+String\+::my\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Construct a new my String\+::my String object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std} & Char arr to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_string_aaa559b403bfe4943ca52ee4a4a6ed21b}\label{classmy_string_aaa559b403bfe4943ca52ee4a4a6ed21b}} 
+\index{myString@{myString}!myString@{myString}}
+\index{myString@{myString}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{myString()}{myString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily my\+String\+::my\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmy_string}{my\+String}} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to coppy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_string_a9edf8e3c899989776bced286841c88f5}\label{classmy_string_a9edf8e3c899989776bced286841c88f5}} 
+\index{myString@{myString}!myString@{myString}}
+\index{myString@{myString}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{myString()}{myString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily my\+String\+::my\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_string}{my\+String}} \&\&}]{string }\end{DoxyParamCaption})}
+
+
+
+Move consructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_string_adbbf90a69973f333edbbd0d8d8cef789}\label{classmy_string_adbbf90a69973f333edbbd0d8d8cef789}} 
+\index{myString@{myString}!````~myString@{$\sim$myString}}
+\index{````~myString@{$\sim$myString}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{$\sim$myString()}{~myString()}}
+{\footnotesize\ttfamily my\+String\+::$\sim$my\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the my String\+::my String object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy_string_a1f9f7542f2e2fdab3ad6e595196ad25b}\label{classmy_string_a1f9f7542f2e2fdab3ad6e595196ad25b}} 
+\index{myString@{myString}!concat@{concat}}
+\index{concat@{concat}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{concat()}{concat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmy_string}{my\+String}} \& my\+String\+::concat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Append a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to append. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classmy_string}{my\+String}} The resulting string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_string_a5657b7aa57acd63992603dc7495e7537}\label{classmy_string_a5657b7aa57acd63992603dc7495e7537}} 
+\index{myString@{myString}!concat@{concat}}
+\index{concat@{concat}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{concat()}{concat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmy_string}{my\+String}} \& my\+String\+::concat (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmy_string}{my\+String}} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Append a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to append. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classmy_string}{my\+String}} The resulting string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_string_ac23ebfea0a4f0d5af9299055144ed5f5}\label{classmy_string_ac23ebfea0a4f0d5af9299055144ed5f5}} 
+\index{myString@{myString}!getChar@{getChar}}
+\index{getChar@{getChar}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{getChar()}{getChar()}}
+{\footnotesize\ttfamily const char $\ast$ my\+String\+::get\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the char array corespondint to the string. 
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_string_ac99cbafc75e8bb5eac2b610d6b3c6a7a}\label{classmy_string_ac99cbafc75e8bb5eac2b610d6b3c6a7a}} 
+\index{myString@{myString}!lenght@{lenght}}
+\index{lenght@{lenght}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{lenght()}{lenght()}}
+{\footnotesize\ttfamily int my\+String\+::lenght (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+int The lenth of the string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_string_a7eff9317ef12b27140a8069334f98816}\label{classmy_string_a7eff9317ef12b27140a8069334f98816}} 
+\index{myString@{myString}!operator=@{operator=}}
+\index{operator=@{operator=}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmy_string}{my\+String}} \& my\+String\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmy_string}{my\+String}} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Assaingment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & String to coppy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classmy_string}{my\+String}}\& the current object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_string_a159bb29fca4ca92ccc6e9fca0d289ab0}\label{classmy_string_a159bb29fca4ca92ccc6e9fca0d289ab0}} 
+\index{myString@{myString}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily void my\+String\+::pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove last char. 
+
+\mbox{\Hypertarget{classmy_string_a07cae357a37d4d340ce50d739cc3c758}\label{classmy_string_a07cae357a37d4d340ce50d739cc3c758}} 
+\index{myString@{myString}!print@{print}}
+\index{print@{print}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void my\+String\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy_string_ae5f1c458c5767f8bfbbdebcc139118a6}\label{classmy_string_ae5f1c458c5767f8bfbbdebcc139118a6}} 
+\index{myString@{myString}!removeChar@{removeChar}}
+\index{removeChar@{removeChar}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{removeChar()}{removeChar()}}
+{\footnotesize\ttfamily void my\+String\+::remove\+Char (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
+
+
+
+Remove all appearances of a given char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & Char to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_string_a5ae5f95b84e0253c99f5e250c23e90b4}\label{classmy_string_a5ae5f95b84e0253c99f5e250c23e90b4}} 
+\index{myString@{myString}!replaceChar@{replaceChar}}
+\index{replaceChar@{replaceChar}!myString@{myString}}
+\doxysubsubsection{\texorpdfstring{replaceChar()}{replaceChar()}}
+{\footnotesize\ttfamily void my\+String\+::replace\+Char (\begin{DoxyParamCaption}\item[{char}]{old\+Char,  }\item[{char}]{new\+Char }\end{DoxyParamCaption})}
+
+
+
+Replacese all appearances of a char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Char} & Char to be replaced. \\
+\hline
+{\em new\+Char} & Char to replace with. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{my_string_8h}{my\+String.\+h}}\item 
+\mbox{\hyperlink{my_string_8cpp}{my\+String.\+cpp}}\end{DoxyCompactItemize}

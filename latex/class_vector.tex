@@ -1,0 +1,301 @@
+\hypertarget{class_vector}{}\doxysection{Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_vector}\index{Vector$<$ T $>$@{Vector$<$ T $>$}}
+
+
+Dynamic array.  
+
+
+
+
+{\ttfamily \#include $<$my\+Vector.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_vector}{Vector}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_a65dd93833fc605414293e09637521534}{Vector}} (\mbox{\hyperlink{class_vector}{Vector}} \&vecotr)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_a047465bf43f5efafe56221d8e6eb8a56}{Vector}} (\mbox{\hyperlink{class_vector}{Vector}} \&\&vector)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_a8d6906176604f2201919991acf655d13}{operator=}} (const \mbox{\hyperlink{class_vector}{Vector}} \&)
+\begin{DoxyCompactList}\small\item\em Assaingment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}{push}} (T element)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_vector}{Vector(\+T $\ast$array)}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector_a8506d14b2540d26a35682200a357d420}{push}} (T element, int index)
+\begin{DoxyCompactList}\small\item\em Adds element to the given positin. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Remove last element. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{class_vector_ad3536c41e3602ec6cf8eed42ef7389e3}{get}} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns refference to element specified by position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_vector_a196e9eedc9a88a48f64e69e39405fa72}{size}} () const
+\item 
+int \mbox{\hyperlink{class_vector_ae542d4e0e22981b211a40f9a1a58b16f}{get\+Capacity}} () const
+\item 
+\mbox{\hyperlink{class_vector_afd524fac19e6d3d69db5198ffe2952b0}{$\sim$\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Vector$<$ T$>$\+:: \mbox{\hyperlink{class_vector}{Vector}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_vector_a27c39a894f88bccf957a1ae2ec5dea1a}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \&)
+\begin{DoxyCompactList}\small\item\em Overloaded output to stream for \mbox{\hyperlink{class_vector}{Vector$<$\+Ticket$\ast$$>$}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Vector$<$ T $>$}
+Dynamic array. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vector_a39d6069675db4ecfc1ab81d440da759a}\label{class_vector_a39d6069675db4ecfc1ab81d440da759a}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_vector}{Vector}} object. 
+
+Amount of elements in the array. \mbox{\Hypertarget{class_vector_a65dd93833fc605414293e09637521534}\label{class_vector_a65dd93833fc605414293e09637521534}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{vecotr }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_a047465bf43f5efafe56221d8e6eb8a56}\label{class_vector_a047465bf43f5efafe56221d8e6eb8a56}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&\&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_afd524fac19e6d3d69db5198ffe2952b0}\label{class_vector_afd524fac19e6d3d69db5198ffe2952b0}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!````~Vector@{$\sim$Vector}}
+\index{````~Vector@{$\sim$Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Vector()}{~Vector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{class_vector}{Vector}}}
+
+
+
+Destroy the Vector$<$ T$>$\+:: \mbox{\hyperlink{class_vector}{Vector}} object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vector_ad3536c41e3602ec6cf8eed42ef7389e3}\label{class_vector_ad3536c41e3602ec6cf8eed42ef7389e3}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!get@{get}}
+\index{get@{get}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns refference to element specified by position. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Position of the element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& The requested element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector_ae542d4e0e22981b211a40f9a1a58b16f}\label{class_vector_ae542d4e0e22981b211a40f9a1a58b16f}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::get\+Capacity}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+int Current capacity of the vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector_a8d6906176604f2201919991acf655d13}\label{class_vector_a8d6906176604f2201919991acf655d13}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{vector }\end{DoxyParamCaption})}
+
+
+
+Assaingment operator. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & \mbox{\hyperlink{class_vector}{Vector}} to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+T$>$\& The current vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}\label{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::pop}
+
+
+
+Remove last element. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T Value of the removed element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}\label{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!push@{push}}
+\index{push@{push}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_vector}{Vector(\+T $\ast$array)}} 
+
+Adds a new element to the back of the array.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em element} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_a8506d14b2540d26a35682200a357d420}\label{class_vector_a8506d14b2540d26a35682200a357d420}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!push@{push}}
+\index{push@{push}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T}]{element,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Adds element to the given positin. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Element to add. \\
+\hline
+{\em index} & Position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_a196e9eedc9a88a48f64e69e39405fa72}\label{class_vector_a196e9eedc9a88a48f64e69e39405fa72}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!size@{size}}
+\index{size@{size}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_vector}{Vector}}$<$ T $>$\+::size}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+int Number of elements in the vector. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_vector_a27c39a894f88bccf957a1ae2ec5dea1a}\label{class_vector_a27c39a894f88bccf957a1ae2ec5dea1a}} 
+\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloaded output to stream for \mbox{\hyperlink{class_vector}{Vector$<$\+Ticket$\ast$$>$}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em vec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{my_vector_8h}{my\+Vector.\+h}}\item 
+\mbox{\hyperlink{my_vector_8hxx}{my\+Vector.\+hxx}}\end{DoxyCompactItemize}

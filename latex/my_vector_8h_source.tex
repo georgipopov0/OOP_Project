@@ -1,0 +1,37 @@
+\hypertarget{my_vector_8h_source}{}\doxysection{my\+Vector.\+h}
+\mbox{\hyperlink{my_vector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_ticket_8h}{Ticket.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{11 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_vector}{Vector}}\{}
+\DoxyCodeLine{13     T* elements; }
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} capacity; }
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} elemCount; }
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}}():elements(new T[1]),capacity(1),elemCount(0)\{\}}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}}(\mbox{\hyperlink{class_vector}{Vector}}\& vecotr);}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}}(\mbox{\hyperlink{class_vector}{Vector}}\&\& vector);}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_vector}{Vector}}\& \mbox{\hyperlink{class_vector_a8d6906176604f2201919991acf655d13}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vector}{Vector}} \&);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}{push}}(T element);}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_vector_ad82d4815c811efa8e2b604317f4f5ac7}{push}}(T element, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{30     T \mbox{\hyperlink{class_vector_aef4a3e10a9844ea17cdd89cee17e495a}{pop}}();}
+\DoxyCodeLine{31     T\& \mbox{\hyperlink{class_vector_ad3536c41e3602ec6cf8eed42ef7389e3}{get}}(\textcolor{keywordtype}{int} index) \textcolor{keyword}{const};}
+\DoxyCodeLine{32     }
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_vector_a196e9eedc9a88a48f64e69e39405fa72}{size}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_vector_ae542d4e0e22981b211a40f9a1a58b16f}{getCapacity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{class_vector_a27c39a894f88bccf957a1ae2ec5dea1a}{operator<<}}(std::ostream\&, \textcolor{keyword}{const} \mbox{\hyperlink{class_vector}{Vector<Ticket*>}}\&);}
+\DoxyCodeLine{37     }
+\DoxyCodeLine{38     \mbox{\hyperlink{class_vector_afd524fac19e6d3d69db5198ffe2952b0}{\string~Vector}}();}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my_vector_8hxx}{myVector.hxx}}"{}}}
+
+\end{DoxyCode}

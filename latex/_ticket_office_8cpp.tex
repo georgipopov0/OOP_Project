@@ -1,0 +1,77 @@
+\hypertarget{_ticket_office_8cpp}{}\doxysection{Ticket\+Office.\+cpp File Reference}
+\label{_ticket_office_8cpp}\index{TicketOffice.cpp@{TicketOffice.cpp}}
+{\ttfamily \#include \char`\"{}Ticket\+Office.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{_ticket_office_8cpp_a5337e8e59c0e88bdb70814d6d28c5b74}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Overloaded output to stream for \mbox{\hyperlink{class_vector}{Vector$<$\+Ticket$\ast$$>$}} \end{DoxyCompactList}\item 
+std\+::ofstream \& \mbox{\hyperlink{_ticket_office_8cpp_a657dccec5b6d9f5df1d58f8f882239c5}{operator$<$$<$}} (std\+::ofstream \&output, \mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} const \&ticket\+Office)
+\begin{DoxyCompactList}\small\item\em Writing ticket\+Office to file. \end{DoxyCompactList}\item 
+std\+::ifstream \& \mbox{\hyperlink{_ticket_office_8cpp_ada66e1d8f03b1a65439db724e65d7023}{operator$>$$>$}} (std\+::ifstream \&is, \mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} \&office)
+\begin{DoxyCompactList}\small\item\em Reading ticket office from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_ticket_office_8cpp_a657dccec5b6d9f5df1d58f8f882239c5}\label{_ticket_office_8cpp_a657dccec5b6d9f5df1d58f8f882239c5}} 
+\index{TicketOffice.cpp@{TicketOffice.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!TicketOffice.cpp@{TicketOffice.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ofstream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{output,  }\item[{\mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} const \&}]{ticket\+Office }\end{DoxyParamCaption})}
+
+
+
+Writing ticket\+Office to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & \\
+\hline
+{\em ticket\+Office} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ofstream\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_ticket_office_8cpp_a5337e8e59c0e88bdb70814d6d28c5b74}\label{_ticket_office_8cpp_a5337e8e59c0e88bdb70814d6d28c5b74}} 
+\index{TicketOffice.cpp@{TicketOffice.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!TicketOffice.cpp@{TicketOffice.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+Overloaded output to stream for \mbox{\hyperlink{class_vector}{Vector$<$\+Ticket$\ast$$>$}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em vec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_ticket_office_8cpp_ada66e1d8f03b1a65439db724e65d7023}\label{_ticket_office_8cpp_ada66e1d8f03b1a65439db724e65d7023}} 
+\index{TicketOffice.cpp@{TicketOffice.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!TicketOffice.cpp@{TicketOffice.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::ifstream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{is,  }\item[{\mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} \&}]{office }\end{DoxyParamCaption})}
+
+
+
+Reading ticket office from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & \\
+\hline
+{\em office} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ifstream\& 
+\end{DoxyReturn}

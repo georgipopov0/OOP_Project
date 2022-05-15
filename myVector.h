@@ -2,13 +2,23 @@
 #include <iostream>
 #include "Ticket.h"
 
+
+/**
+ * @brief Dynamic array.
+ * 
+ * @tparam T
+ */
 template <typename T>
 class Vector{
-    T* elements;
-    int capacity;
-    int elemCount;
+    T* elements; /** Pointer to the dynamic array. */
+    int capacity; /** Size of the array. */
+    int elemCount; /** Amount of elements in the array. */
 
     public:
+    /**
+     * @brief Construct a new Vector object
+     * 
+     */
     Vector():elements(new T[1]),capacity(1),elemCount(0){}
     Vector(Vector& vecotr);
     Vector(Vector&& vector);

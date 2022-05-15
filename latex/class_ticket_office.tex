@@ -1,0 +1,289 @@
+\hypertarget{class_ticket_office}{}\doxysection{Ticket\+Office Class Reference}
+\label{class_ticket_office}\index{TicketOffice@{TicketOffice}}
+
+
+Controlls all performances.  
+
+
+
+
+{\ttfamily \#include $<$Ticket\+Office.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ticket_office_a187e91118654b106131735126c530ad9}{Ticket\+Office}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_ticket}{Ticket}} Office object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ticket_office_af948bc33df7a92b0020fc876f64dd10d}{Ticket\+Office}} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Costructs a instance from a savefile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_ac3987bc62c42619289eb2a661fa80d76}{add\+Hall}} (\mbox{\hyperlink{class_hall}{Hall}})
+\begin{DoxyCompactList}\small\item\em Add new hall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a8ac594e8709eb86e1612f237c9d6aa24}{add\+Performence}} (const char $\ast$title, time\+\_\+t date, int hall\+Id)
+\begin{DoxyCompactList}\small\item\em Add new performance. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_hall}{Hall}} $>$ \& \mbox{\hyperlink{class_ticket_office_a3a1e722534ea78459018d4c37a364a82}{get\+Halls}} () const
+\item 
+void \mbox{\hyperlink{class_ticket_office_a1445e59ebbd593c49b7b7e1c9a775aeb}{Print\+Tickets\+With\+Status\+To\+Console}} (const char $\ast$, time\+\_\+t, \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}) const
+\begin{DoxyCompactList}\small\item\em Prints all tickets with the specified status to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a0849254996f10a60cb9c33a180795899}{Print\+Tickets\+With\+Status\+To\+File}} (const char $\ast$, time\+\_\+t, \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}) const
+\begin{DoxyCompactList}\small\item\em Prints all tickets with the specified status to report files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_ae2e225d5d9c11bfddb85c9ff375e9817}{Print\+Bouth\+Tickets\+For\+Hall}} (int) const
+\begin{DoxyCompactList}\small\item\em Prints a statistic for all tickets bouth in the specified hall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a8c9f11f8ed64ee72a6b78b2cae494a7e}{Reserv\+Ticket}} (const char $\ast$, time\+\_\+t, int, int, \mbox{\hyperlink{classmy_string}{my\+String}}, \mbox{\hyperlink{classmy_string}{my\+String}})
+\begin{DoxyCompactList}\small\item\em Reserve a ticket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a9743654d6d56b3886d0e0de7da27e4e8}{Cancel\+Reservation}} (const char $\ast$, time\+\_\+t, int, int)
+\begin{DoxyCompactList}\small\item\em Cancel reservation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ticket_office_a5584e4827a25cfa69fa58920a148d260}{Buy\+Ticket}} (const char $\ast$, time\+\_\+t, int, int)
+\begin{DoxyCompactList}\small\item\em Buy a ticket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ofstream \& \mbox{\hyperlink{class_ticket_office_a657dccec5b6d9f5df1d58f8f882239c5}{operator$<$$<$}} (std\+::ofstream \&output, \mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} const \&ticket\+Office)
+\begin{DoxyCompactList}\small\item\em Writing ticket\+Office to file. \end{DoxyCompactList}\item 
+std\+::ifstream \& \mbox{\hyperlink{class_ticket_office_ada66e1d8f03b1a65439db724e65d7023}{operator$>$$>$}} (std\+::ifstream \&is, \mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} \&office)
+\begin{DoxyCompactList}\small\item\em Reading ticket office from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlls all performances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ticket_office_a187e91118654b106131735126c530ad9}\label{class_ticket_office_a187e91118654b106131735126c530ad9}} 
+\index{TicketOffice@{TicketOffice}!TicketOffice@{TicketOffice}}
+\index{TicketOffice@{TicketOffice}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{TicketOffice()}{TicketOffice()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ticket\+Office\+::\+Ticket\+Office (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_ticket}{Ticket}} Office object. 
+
+\mbox{\Hypertarget{class_ticket_office_af948bc33df7a92b0020fc876f64dd10d}\label{class_ticket_office_af948bc33df7a92b0020fc876f64dd10d}} 
+\index{TicketOffice@{TicketOffice}!TicketOffice@{TicketOffice}}
+\index{TicketOffice@{TicketOffice}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{TicketOffice()}{TicketOffice()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ticket\+Office\+::\+Ticket\+Office (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Costructs a instance from a savefile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ticket_office_ac3987bc62c42619289eb2a661fa80d76}\label{class_ticket_office_ac3987bc62c42619289eb2a661fa80d76}} 
+\index{TicketOffice@{TicketOffice}!addHall@{addHall}}
+\index{addHall@{addHall}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{addHall()}{addHall()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::add\+Hall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hall}{Hall}}}]{hall }\end{DoxyParamCaption})}
+
+
+
+Add new hall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hall} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a8ac594e8709eb86e1612f237c9d6aa24}\label{class_ticket_office_a8ac594e8709eb86e1612f237c9d6aa24}} 
+\index{TicketOffice@{TicketOffice}!addPerformence@{addPerformence}}
+\index{addPerformence@{addPerformence}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{addPerformence()}{addPerformence()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::add\+Performence (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{time\+\_\+t}]{date,  }\item[{int}]{hall\+Id }\end{DoxyParamCaption})}
+
+
+
+Add new performance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the performance. \\
+\hline
+{\em date} & Date of the performance. \\
+\hline
+{\em hall\+Id} & Id of the hall the performance should be added to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a5584e4827a25cfa69fa58920a148d260}\label{class_ticket_office_a5584e4827a25cfa69fa58920a148d260}} 
+\index{TicketOffice@{TicketOffice}!BuyTicket@{BuyTicket}}
+\index{BuyTicket@{BuyTicket}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{BuyTicket()}{BuyTicket()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::\+Buy\+Ticket (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{time\+\_\+t}]{date,  }\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+
+
+Buy a ticket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the performance. \\
+\hline
+{\em date} & Date of the performance. \\
+\hline
+{\em roll} & Roll of the ticket. \\
+\hline
+{\em seat} & Seat of the ticket. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a9743654d6d56b3886d0e0de7da27e4e8}\label{class_ticket_office_a9743654d6d56b3886d0e0de7da27e4e8}} 
+\index{TicketOffice@{TicketOffice}!CancelReservation@{CancelReservation}}
+\index{CancelReservation@{CancelReservation}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{CancelReservation()}{CancelReservation()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::\+Cancel\+Reservation (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{time\+\_\+t}]{date,  }\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+
+
+Cancel reservation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the performance. \\
+\hline
+{\em date} & Date of the performance. \\
+\hline
+{\em roll} & Roll of the ticket. \\
+\hline
+{\em seat} & Seat of the ticket. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a3a1e722534ea78459018d4c37a364a82}\label{class_ticket_office_a3a1e722534ea78459018d4c37a364a82}} 
+\index{TicketOffice@{TicketOffice}!getHalls@{getHalls}}
+\index{getHalls@{getHalls}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{getHalls()}{getHalls()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_hall}{Hall}} $>$ \& Ticket\+Office\+::get\+Halls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{class_vector}{Vector$<$\+Hall$>$}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ticket_office_ae2e225d5d9c11bfddb85c9ff375e9817}\label{class_ticket_office_ae2e225d5d9c11bfddb85c9ff375e9817}} 
+\index{TicketOffice@{TicketOffice}!PrintBouthTicketsForHall@{PrintBouthTicketsForHall}}
+\index{PrintBouthTicketsForHall@{PrintBouthTicketsForHall}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{PrintBouthTicketsForHall()}{PrintBouthTicketsForHall()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::\+Print\+Bouth\+Tickets\+For\+Hall (\begin{DoxyParamCaption}\item[{int}]{hall\+Id }\end{DoxyParamCaption}) const}
+
+
+
+Prints a statistic for all tickets bouth in the specified hall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hall\+Id} & if 0 prints statistic for all hall. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a1445e59ebbd593c49b7b7e1c9a775aeb}\label{class_ticket_office_a1445e59ebbd593c49b7b7e1c9a775aeb}} 
+\index{TicketOffice@{TicketOffice}!PrintTicketsWithStatusToConsole@{PrintTicketsWithStatusToConsole}}
+\index{PrintTicketsWithStatusToConsole@{PrintTicketsWithStatusToConsole}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{PrintTicketsWithStatusToConsole()}{PrintTicketsWithStatusToConsole()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::\+Print\+Tickets\+With\+Status\+To\+Console (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{time\+\_\+t}]{date,  }\item[{\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}}]{status }\end{DoxyParamCaption}) const}
+
+
+
+Prints all tickets with the specified status to the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & if \char`\"{}\+All\char`\"{} prints all performances on the specified date \\
+\hline
+{\em date} & if 0 prints all performances on with the specified title. \\
+\hline
+{\em status} & Status of the tickets. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a0849254996f10a60cb9c33a180795899}\label{class_ticket_office_a0849254996f10a60cb9c33a180795899}} 
+\index{TicketOffice@{TicketOffice}!PrintTicketsWithStatusToFile@{PrintTicketsWithStatusToFile}}
+\index{PrintTicketsWithStatusToFile@{PrintTicketsWithStatusToFile}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{PrintTicketsWithStatusToFile()}{PrintTicketsWithStatusToFile()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::\+Print\+Tickets\+With\+Status\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{time\+\_\+t}]{date,  }\item[{\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}}]{status }\end{DoxyParamCaption}) const}
+
+
+
+Prints all tickets with the specified status to report files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & if \char`\"{}\+All\char`\"{} prints all performances on the specified date \\
+\hline
+{\em date} & if 0 prints all performances on with the specified title. \\
+\hline
+{\em status} & Status of the tickets. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ticket_office_a8c9f11f8ed64ee72a6b78b2cae494a7e}\label{class_ticket_office_a8c9f11f8ed64ee72a6b78b2cae494a7e}} 
+\index{TicketOffice@{TicketOffice}!ReservTicket@{ReservTicket}}
+\index{ReservTicket@{ReservTicket}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{ReservTicket()}{ReservTicket()}}
+{\footnotesize\ttfamily void Ticket\+Office\+::\+Reserv\+Ticket (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{time\+\_\+t}]{date,  }\item[{int}]{roll,  }\item[{int}]{seat,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{pass,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{description = {\ttfamily \mbox{\hyperlink{classmy_string}{my\+String}}()} }\end{DoxyParamCaption})}
+
+
+
+Reserve a ticket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the performance. \\
+\hline
+{\em date} & Date of the performance. \\
+\hline
+{\em roll} & Roll of the ticket. \\
+\hline
+{\em seat} & Seat of the ticket. \\
+\hline
+{\em pass} & Password for the reservation. \\
+\hline
+{\em description} & Description for the reservation. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_ticket_office_a657dccec5b6d9f5df1d58f8f882239c5}\label{class_ticket_office_a657dccec5b6d9f5df1d58f8f882239c5}} 
+\index{TicketOffice@{TicketOffice}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ofstream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{output,  }\item[{\mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} const \&}]{ticket\+Office }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Writing ticket\+Office to file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & \\
+\hline
+{\em ticket\+Office} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ofstream\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ticket_office_ada66e1d8f03b1a65439db724e65d7023}\label{class_ticket_office_ada66e1d8f03b1a65439db724e65d7023}} 
+\index{TicketOffice@{TicketOffice}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!TicketOffice@{TicketOffice}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::ifstream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{is,  }\item[{\mbox{\hyperlink{class_ticket_office}{Ticket\+Office}} \&}]{office }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Reading ticket office from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & \\
+\hline
+{\em office} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ifstream\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ticket_office_8h}{Ticket\+Office.\+h}}\item 
+\mbox{\hyperlink{_ticket_office_8cpp}{Ticket\+Office.\+cpp}}\end{DoxyCompactItemize}

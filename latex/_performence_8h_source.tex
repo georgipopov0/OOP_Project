@@ -1,0 +1,44 @@
+\hypertarget{_performence_8h_source}{}\doxysection{Performence.\+h}
+\mbox{\hyperlink{_performence_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <ctime>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my_string_8h}{myString.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my_vector_8h}{myVector.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reserved_ticket_8h}{ReservedTicket.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_bought_ticket_8h}{BoughtTicket.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_performance}{Performance}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 \textcolor{keyword}{private}:}
+\DoxyCodeLine{11     std::time\_t date;}
+\DoxyCodeLine{12     \mbox{\hyperlink{classmy_string}{myString}} title;}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_vector}{Vector<Ticket*>}} tickets;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} deleteTickets();}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} copyTickets(\textcolor{keyword}{const} \mbox{\hyperlink{class_performance}{Performance}} \&);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_ticket}{Ticket}}* \&findTicket(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})\textcolor{keyword}{const};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_performance_ac3f9a91ae5b8488e75385901497b0636}{Performance}}():title(\mbox{\hyperlink{classmy_string}{myString}}()), date(std::time\_t()), tickets(\mbox{\hyperlink{class_vector}{Vector}}<\mbox{\hyperlink{class_ticket}{Ticket}}*>())\{\}}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_performance_ac3f9a91ae5b8488e75385901497b0636}{Performance}}(std::time\_t date, \mbox{\hyperlink{classmy_string}{myString}} title);}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_performance_ac3f9a91ae5b8488e75385901497b0636}{Performance}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_performance}{Performance}}\&);}
+\DoxyCodeLine{23     \mbox{\hyperlink{classmy_string}{myString}} \mbox{\hyperlink{class_performance_a4fa70b51e8cc2433751db26e142dc15e}{getTitle}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_performance_ac3f9a91ae5b8488e75385901497b0636}{Performance}}(\mbox{\hyperlink{class_performance}{Performance}}\&\& performence);}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_performance_a1a7af5c73f8bdd80ec08872cc2992b82}{\string~Performance}}();}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_performance}{Performance}}\& \mbox{\hyperlink{class_performance_a71fc84313fc2b31a041a03e6e6f9428d}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_performance}{Performance}}\&);}
+\DoxyCodeLine{27     std::time\_t \mbox{\hyperlink{class_performance_a319062ad145f2cd1bc473cfaa5b21d05}{getDate}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{28     \textcolor{keyword}{const} \mbox{\hyperlink{class_vector}{Vector<Ticket*>}}\& \mbox{\hyperlink{class_performance_ac532ff7bbbdd44f416b971f53fbb116c}{getTickets}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_performance_af193235d25621a5f05baba83c13bb17a}{generateTickets}}(\textcolor{keywordtype}{int} rolls, \textcolor{keywordtype}{int} seats);}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_vector}{Vector<Ticket*>}} \mbox{\hyperlink{class_performance_a50c944a546e7552d6d6253e4c672eb89}{getTicktesWithStatus}}(\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{TicketStatus}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_performance_aa4d8448eee9f24b9b2dddac6e21d5190}{ReserveTicket}}(\textcolor{keywordtype}{int} roll, \textcolor{keywordtype}{int} seat, \mbox{\hyperlink{classmy_string}{myString}}, \mbox{\hyperlink{classmy_string}{myString}});}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_performance_a318d96ed892a671b4684112cd7ca25a2}{CancelReservation}}(\textcolor{keywordtype}{int} roll, \textcolor{keywordtype}{int} seat);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_performance_aa1ca33df8af3c8df34d6ee758284dfbf}{BuyTicket}}(\textcolor{keywordtype}{int} roll, \textcolor{keywordtype}{int} seat);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//Hardcode for file reading}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_performance_a7d0088a2356b3d63404db4f748697750}{UpdateTicket}}(\mbox{\hyperlink{class_ticket}{Ticket}}* newTicket);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_performance_a564579ef7996d6d4a4f80b07300dbf88}{UpdateTickets}}(\mbox{\hyperlink{class_vector}{Vector<Ticket*>}} tickets);}
+\DoxyCodeLine{40 \};}
+
+\end{DoxyCode}

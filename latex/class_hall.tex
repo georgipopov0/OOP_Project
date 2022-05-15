@@ -1,0 +1,204 @@
+\hypertarget{class_hall}{}\doxysection{Hall Class Reference}
+\label{class_hall}\index{Hall@{Hall}}
+
+
+\mbox{\hyperlink{class_hall}{Hall}} for the performances.  
+
+
+
+
+{\ttfamily \#include $<$Hall.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hall_a122ed8085be305339c89cadb3e360b86}{Hall}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_hall}{Hall}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hall_acad4432746bd0b3c00ee3fd23c3e21cf}{Hall}} (int, \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $>$, int, int)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_hall}{Hall}}\+:\+: \mbox{\hyperlink{class_hall}{Hall}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hall_a39ccddbaef31fa4c27b2e463303b2986}{Hall}} (const \mbox{\hyperlink{class_hall}{Hall}} \&)
+\begin{DoxyCompactList}\small\item\em Copu constructor for hall. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_hall_a2612d0350c629f9bcab37b79ecdef475}{get\+Hall\+Id}} () const
+\item 
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $>$ \& \mbox{\hyperlink{class_hall_a070877f4ac30c0f0ff95580474df4857}{get\+Performences}} () const
+\item 
+int \mbox{\hyperlink{class_hall_ab01c9b835a654a37d8f251ae40bd4e05}{get\+Rolls}} () const
+\item 
+int \mbox{\hyperlink{class_hall_a2078be3e31b1a340cf345e1716c758d7}{get\+Seats}} () const
+\item 
+void \mbox{\hyperlink{class_hall_a1692174a62734974555c22e1961299c3}{add\+Performence}} (\mbox{\hyperlink{class_performance}{Performance}} performence)
+\begin{DoxyCompactList}\small\item\em adds performence to the \mbox{\hyperlink{class_hall}{Hall}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_performance}{Performance}} $\ast$ \mbox{\hyperlink{class_hall_ae0fee3a3f633c6cad6e2c629e186a27a}{find\+Performence}} (\mbox{\hyperlink{classmy_string}{my\+String}}, std\+::time\+\_\+t) const
+\begin{DoxyCompactList}\small\item\em Finds performence by title and date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $\ast$ $>$ \mbox{\hyperlink{class_hall_a4b5577f8c5c08f0f9b6e72ea8142bde5}{find\+Performence}} (\mbox{\hyperlink{classmy_string}{my\+String}}) const
+\begin{DoxyCompactList}\small\item\em Finds all performences with the given title. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $\ast$ $>$ \mbox{\hyperlink{class_hall_a37b4c1890a176b0cef5f051869c12cd3}{find\+Performence}} (std\+::time\+\_\+t date) const
+\begin{DoxyCompactList}\small\item\em Finds all performances with the given date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_hall}{Hall}} for the performances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hall_a122ed8085be305339c89cadb3e360b86}\label{class_hall_a122ed8085be305339c89cadb3e360b86}} 
+\index{Hall@{Hall}!Hall@{Hall}}
+\index{Hall@{Hall}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{Hall()}{Hall()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_hall}{Hall}} object. 
+
+Seats per row \mbox{\Hypertarget{class_hall_acad4432746bd0b3c00ee3fd23c3e21cf}\label{class_hall_acad4432746bd0b3c00ee3fd23c3e21cf}} 
+\index{Hall@{Hall}!Hall@{Hall}}
+\index{Hall@{Hall}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{Hall()}{Hall()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}\item[{int}]{hall\+Id,  }\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $>$}]{performences,  }\item[{int}]{rolls,  }\item[{int}]{seats }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_hall}{Hall}}\+:\+: \mbox{\hyperlink{class_hall}{Hall}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hall\+Id} & Id. \\
+\hline
+{\em performences} & Linst of performences. \\
+\hline
+{\em rolls} & Number of rolls in the hall. \\
+\hline
+{\em seats} & Number of seats per roll. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_a39ccddbaef31fa4c27b2e463303b2986}\label{class_hall_a39ccddbaef31fa4c27b2e463303b2986}} 
+\index{Hall@{Hall}!Hall@{Hall}}
+\index{Hall@{Hall}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{Hall()}{Hall()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hall}{Hall}} \&}]{hall }\end{DoxyParamCaption})}
+
+
+
+Copu constructor for hall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hall} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hall_a1692174a62734974555c22e1961299c3}\label{class_hall_a1692174a62734974555c22e1961299c3}} 
+\index{Hall@{Hall}!addPerformence@{addPerformence}}
+\index{addPerformence@{addPerformence}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{addPerformence()}{addPerformence()}}
+{\footnotesize\ttfamily void Hall\+::add\+Performence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_performance}{Performance}}}]{performence }\end{DoxyParamCaption})}
+
+
+
+adds performence to the \mbox{\hyperlink{class_hall}{Hall}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em performence} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hall_a4b5577f8c5c08f0f9b6e72ea8142bde5}\label{class_hall_a4b5577f8c5c08f0f9b6e72ea8142bde5}} 
+\index{Hall@{Hall}!findPerformence@{findPerformence}}
+\index{findPerformence@{findPerformence}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{findPerformence()}{findPerformence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $\ast$ $>$ Hall\+::find\+Performence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{title }\end{DoxyParamCaption}) const}
+
+
+
+Finds all performences with the given title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the performences. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Performence$\ast$$>$ \mbox{\hyperlink{class_vector}{Vector}} with refferences to the found performances. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_ae0fee3a3f633c6cad6e2c629e186a27a}\label{class_hall_ae0fee3a3f633c6cad6e2c629e186a27a}} 
+\index{Hall@{Hall}!findPerformence@{findPerformence}}
+\index{findPerformence@{findPerformence}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{findPerformence()}{findPerformence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_performance}{Performance}} $\ast$ Hall\+::find\+Performence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{title,  }\item[{std\+::time\+\_\+t}]{date }\end{DoxyParamCaption}) const}
+
+
+
+Finds performence by title and date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the performence. \\
+\hline
+{\em date} & Date of the performence. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the performence or nullptr if the performence doesnt exist. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a37b4c1890a176b0cef5f051869c12cd3}\label{class_hall_a37b4c1890a176b0cef5f051869c12cd3}} 
+\index{Hall@{Hall}!findPerformence@{findPerformence}}
+\index{findPerformence@{findPerformence}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{findPerformence()}{findPerformence()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $\ast$ $>$ Hall\+::find\+Performence (\begin{DoxyParamCaption}\item[{std\+::time\+\_\+t}]{date }\end{DoxyParamCaption}) const}
+
+
+
+Finds all performances with the given date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Date of the performences. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Performence$\ast$$>$ \mbox{\hyperlink{class_vector}{Vector}} with refferences to the found performances. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a2612d0350c629f9bcab37b79ecdef475}\label{class_hall_a2612d0350c629f9bcab37b79ecdef475}} 
+\index{Hall@{Hall}!getHallId@{getHallId}}
+\index{getHallId@{getHallId}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getHallId()}{getHallId()}}
+{\footnotesize\ttfamily int Hall\+::get\+Hall\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int \mbox{\hyperlink{class_hall}{Hall}} id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a070877f4ac30c0f0ff95580474df4857}\label{class_hall_a070877f4ac30c0f0ff95580474df4857}} 
+\index{Hall@{Hall}!getPerformences@{getPerformences}}
+\index{getPerformences@{getPerformences}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getPerformences()}{getPerformences()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_performance}{Performance}} $>$ \& Hall\+::get\+Performences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Vector$<$\+Performence$>$\&; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_ab01c9b835a654a37d8f251ae40bd4e05}\label{class_hall_ab01c9b835a654a37d8f251ae40bd4e05}} 
+\index{Hall@{Hall}!getRolls@{getRolls}}
+\index{getRolls@{getRolls}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getRolls()}{getRolls()}}
+{\footnotesize\ttfamily int Hall\+::get\+Rolls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hall_a2078be3e31b1a340cf345e1716c758d7}\label{class_hall_a2078be3e31b1a340cf345e1716c758d7}} 
+\index{Hall@{Hall}!getSeats@{getSeats}}
+\index{getSeats@{getSeats}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getSeats()}{getSeats()}}
+{\footnotesize\ttfamily int Hall\+::get\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_hall_8h}{Hall.\+h}}\item 
+\mbox{\hyperlink{_hall_8cpp}{Hall.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,281 @@
+\hypertarget{class_performance}{}\doxysection{Performance Class Reference}
+\label{class_performance}\index{Performance@{Performance}}
+
+
+{\ttfamily \#include $<$Performence.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_performance_ac3f9a91ae5b8488e75385901497b0636}{Performance}} ()
+\item 
+\mbox{\hyperlink{class_performance_a0df4b5b402c6544c35dc49df7d338c9b}{Performance}} (std\+::time\+\_\+t date, \mbox{\hyperlink{classmy_string}{my\+String}} title)
+\begin{DoxyCompactList}\small\item\em Construct a new Performence\+:\+: Performence object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_performance_ae7c9a12f9bd5bd5e40862061c4863473}{Performance}} (const \mbox{\hyperlink{class_performance}{Performance}} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy_string}{my\+String}} \mbox{\hyperlink{class_performance_a4fa70b51e8cc2433751db26e142dc15e}{get\+Title}} () const
+\item 
+\mbox{\hyperlink{class_performance_ade18251326231aa786b8470f6e5dced3}{Performance}} (\mbox{\hyperlink{class_performance}{Performance}} \&\&performence)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_performance_a1a7af5c73f8bdd80ec08872cc2992b82}{$\sim$\+Performance}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Performence\+:\+: Performence object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_performance}{Performance}} \& \mbox{\hyperlink{class_performance_a71fc84313fc2b31a041a03e6e6f9428d}{operator=}} (const \mbox{\hyperlink{class_performance}{Performance}} \&)
+\begin{DoxyCompactList}\small\item\em Asignment operator. \end{DoxyCompactList}\item 
+std\+::time\+\_\+t \mbox{\hyperlink{class_performance_a319062ad145f2cd1bc473cfaa5b21d05}{get\+Date}} () const
+\item 
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \& \mbox{\hyperlink{class_performance_ac532ff7bbbdd44f416b971f53fbb116c}{get\+Tickets}} () const
+\item 
+void \mbox{\hyperlink{class_performance_af193235d25621a5f05baba83c13bb17a}{generate\+Tickets}} (int rolls, int seats)
+\begin{DoxyCompactList}\small\item\em Generates tickets for the specified amount of seats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \mbox{\hyperlink{class_performance_a50c944a546e7552d6d6253e4c672eb89}{get\+Ticktes\+With\+Status}} (\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}) const
+\begin{DoxyCompactList}\small\item\em Finds all tickets with the specified status (available,reserved,bought). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_performance_aa4d8448eee9f24b9b2dddac6e21d5190}{Reserve\+Ticket}} (int roll, int seat, \mbox{\hyperlink{classmy_string}{my\+String}}, \mbox{\hyperlink{classmy_string}{my\+String}})
+\begin{DoxyCompactList}\small\item\em Changes a ticket from Tieckt to \mbox{\hyperlink{class_reserved_ticket}{Reserved\+Ticket}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_performance_a318d96ed892a671b4684112cd7ca25a2}{Cancel\+Reservation}} (int roll, int seat)
+\begin{DoxyCompactList}\small\item\em Returns ticket from \mbox{\hyperlink{class_reserved_ticket}{Reserved\+Ticket}} to \mbox{\hyperlink{class_ticket}{Ticket}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_performance_aa1ca33df8af3c8df34d6ee758284dfbf}{Buy\+Ticket}} (int roll, int seat)
+\begin{DoxyCompactList}\small\item\em Changes a ticket to \mbox{\hyperlink{class_bought_ticket}{Bought\+Ticket}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_performance_a7d0088a2356b3d63404db4f748697750}{Update\+Ticket}} (\mbox{\hyperlink{class_ticket}{Ticket}} $\ast$new\+Ticket)
+\begin{DoxyCompactList}\small\item\em Replace a \mbox{\hyperlink{class_ticket}{Ticket}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_performance_a564579ef7996d6d4a4f80b07300dbf88}{Update\+Tickets}} (\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ tickets)
+\begin{DoxyCompactList}\small\item\em Replaces all tickets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_performance_ac3f9a91ae5b8488e75385901497b0636}\label{class_performance_ac3f9a91ae5b8488e75385901497b0636}} 
+\index{Performance@{Performance}!Performance@{Performance}}
+\index{Performance@{Performance}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{Performance()}{Performance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Performance\+::\+Performance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_performance_a0df4b5b402c6544c35dc49df7d338c9b}\label{class_performance_a0df4b5b402c6544c35dc49df7d338c9b}} 
+\index{Performance@{Performance}!Performance@{Performance}}
+\index{Performance@{Performance}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{Performance()}{Performance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Performance\+::\+Performance (\begin{DoxyParamCaption}\item[{std\+::time\+\_\+t}]{date,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{title }\end{DoxyParamCaption})}
+
+
+
+Construct a new Performence\+:\+: Performence object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em title} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_ae7c9a12f9bd5bd5e40862061c4863473}\label{class_performance_ae7c9a12f9bd5bd5e40862061c4863473}} 
+\index{Performance@{Performance}!Performance@{Performance}}
+\index{Performance@{Performance}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{Performance()}{Performance()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Performance\+::\+Performance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_performance}{Performance}} \&}]{performence }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em performence} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_ade18251326231aa786b8470f6e5dced3}\label{class_performance_ade18251326231aa786b8470f6e5dced3}} 
+\index{Performance@{Performance}!Performance@{Performance}}
+\index{Performance@{Performance}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{Performance()}{Performance()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Performance\+::\+Performance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_performance}{Performance}} \&\&}]{performence }\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em performence} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_a1a7af5c73f8bdd80ec08872cc2992b82}\label{class_performance_a1a7af5c73f8bdd80ec08872cc2992b82}} 
+\index{Performance@{Performance}!````~Performance@{$\sim$Performance}}
+\index{````~Performance@{$\sim$Performance}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{$\sim$Performance()}{~Performance()}}
+{\footnotesize\ttfamily Performance\+::$\sim$\+Performance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Performence\+:\+: Performence object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_performance_aa1ca33df8af3c8df34d6ee758284dfbf}\label{class_performance_aa1ca33df8af3c8df34d6ee758284dfbf}} 
+\index{Performance@{Performance}!BuyTicket@{BuyTicket}}
+\index{BuyTicket@{BuyTicket}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{BuyTicket()}{BuyTicket()}}
+{\footnotesize\ttfamily void Performance\+::\+Buy\+Ticket (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+
+
+Changes a ticket to \mbox{\hyperlink{class_bought_ticket}{Bought\+Ticket}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roll} & \\
+\hline
+{\em seat} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_a318d96ed892a671b4684112cd7ca25a2}\label{class_performance_a318d96ed892a671b4684112cd7ca25a2}} 
+\index{Performance@{Performance}!CancelReservation@{CancelReservation}}
+\index{CancelReservation@{CancelReservation}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{CancelReservation()}{CancelReservation()}}
+{\footnotesize\ttfamily void Performance\+::\+Cancel\+Reservation (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+
+
+Returns ticket from \mbox{\hyperlink{class_reserved_ticket}{Reserved\+Ticket}} to \mbox{\hyperlink{class_ticket}{Ticket}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roll} & \\
+\hline
+{\em seat} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_af193235d25621a5f05baba83c13bb17a}\label{class_performance_af193235d25621a5f05baba83c13bb17a}} 
+\index{Performance@{Performance}!generateTickets@{generateTickets}}
+\index{generateTickets@{generateTickets}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{generateTickets()}{generateTickets()}}
+{\footnotesize\ttfamily void Performance\+::generate\+Tickets (\begin{DoxyParamCaption}\item[{int}]{rolls,  }\item[{int}]{seats }\end{DoxyParamCaption})}
+
+
+
+Generates tickets for the specified amount of seats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rolls} & Number of rolls. \\
+\hline
+{\em seats} & Number of seats per roll. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_a319062ad145f2cd1bc473cfaa5b21d05}\label{class_performance_a319062ad145f2cd1bc473cfaa5b21d05}} 
+\index{Performance@{Performance}!getDate@{getDate}}
+\index{getDate@{getDate}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily std\+::time\+\_\+t Performance\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+std\+::time\+\_\+t Date of the performence. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_performance_ac532ff7bbbdd44f416b971f53fbb116c}\label{class_performance_ac532ff7bbbdd44f416b971f53fbb116c}} 
+\index{Performance@{Performance}!getTickets@{getTickets}}
+\index{getTickets@{getTickets}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{getTickets()}{getTickets()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \& Performance\+::get\+Tickets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{class_vector}{Vector$<$\+Ticket$\ast$$>$}}\& Refference to the tickets of the performance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_performance_a50c944a546e7552d6d6253e4c672eb89}\label{class_performance_a50c944a546e7552d6d6253e4c672eb89}} 
+\index{Performance@{Performance}!getTicktesWithStatus@{getTicktesWithStatus}}
+\index{getTicktesWithStatus@{getTicktesWithStatus}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{getTicktesWithStatus()}{getTicktesWithStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ Performance\+::get\+Ticktes\+With\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}}]{status }\end{DoxyParamCaption}) const}
+
+
+
+Finds all tickets with the specified status (available,reserved,bought). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vector}{Vector$<$\+Ticket$\ast$$>$}} \mbox{\hyperlink{class_vector}{Vector}} containing all tickets with the specified status. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_performance_a4fa70b51e8cc2433751db26e142dc15e}\label{class_performance_a4fa70b51e8cc2433751db26e142dc15e}} 
+\index{Performance@{Performance}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmy_string}{my\+String}} Performance\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classmy_string}{my\+String}} Title of the performence. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_performance_a71fc84313fc2b31a041a03e6e6f9428d}\label{class_performance_a71fc84313fc2b31a041a03e6e6f9428d}} 
+\index{Performance@{Performance}!operator=@{operator=}}
+\index{operator=@{operator=}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_performance}{Performance}} \& Performance\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_performance}{Performance}} \&}]{performence }\end{DoxyParamCaption})}
+
+
+
+Asignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em performence} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Performence\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_performance_aa4d8448eee9f24b9b2dddac6e21d5190}\label{class_performance_aa4d8448eee9f24b9b2dddac6e21d5190}} 
+\index{Performance@{Performance}!ReserveTicket@{ReserveTicket}}
+\index{ReserveTicket@{ReserveTicket}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{ReserveTicket()}{ReserveTicket()}}
+{\footnotesize\ttfamily void Performance\+::\+Reserve\+Ticket (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{password,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{descriprion }\end{DoxyParamCaption})}
+
+
+
+Changes a ticket from Tieckt to \mbox{\hyperlink{class_reserved_ticket}{Reserved\+Ticket}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roll} & \\
+\hline
+{\em seat} & \\
+\hline
+{\em password} & \\
+\hline
+{\em descriprion} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_a7d0088a2356b3d63404db4f748697750}\label{class_performance_a7d0088a2356b3d63404db4f748697750}} 
+\index{Performance@{Performance}!UpdateTicket@{UpdateTicket}}
+\index{UpdateTicket@{UpdateTicket}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{UpdateTicket()}{UpdateTicket()}}
+{\footnotesize\ttfamily void Performance\+::\+Update\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ticket}{Ticket}} $\ast$}]{new\+Ticket }\end{DoxyParamCaption})}
+
+
+
+Replace a \mbox{\hyperlink{class_ticket}{Ticket}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Ticket} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_performance_a564579ef7996d6d4a4f80b07300dbf88}\label{class_performance_a564579ef7996d6d4a4f80b07300dbf88}} 
+\index{Performance@{Performance}!UpdateTickets@{UpdateTickets}}
+\index{UpdateTickets@{UpdateTickets}!Performance@{Performance}}
+\doxysubsubsection{\texorpdfstring{UpdateTickets()}{UpdateTickets()}}
+{\footnotesize\ttfamily void Performance\+::\+Update\+Tickets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$}]{tickets }\end{DoxyParamCaption})}
+
+
+
+Replaces all tickets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tickets} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_performence_8h}{Performence.\+h}}\item 
+\mbox{\hyperlink{_perfomence_8cpp}{Perfomence.\+cpp}}\end{DoxyCompactItemize}

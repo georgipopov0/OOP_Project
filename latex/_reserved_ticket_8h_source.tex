@@ -1,0 +1,24 @@
+\hypertarget{_reserved_ticket_8h_source}{}\doxysection{Reserved\+Ticket.\+h}
+\mbox{\hyperlink{_reserved_ticket_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_ticket_8h}{Ticket.h}}"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my_string_8h}{myString.h}}"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_reserved_ticket}{ReservedTicket}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_ticket}{Ticket}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{private}:}
+\DoxyCodeLine{8     \mbox{\hyperlink{classmy_string}{myString}} descriptin;}
+\DoxyCodeLine{9     \mbox{\hyperlink{classmy_string}{myString}} password;}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \textcolor{comment}{// This class will alway be created from a Ticket}}
+\DoxyCodeLine{12     \textcolor{comment}{// there is no need to make a lot of constructors}}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_reserved_ticket_ad5f79265d1cd25a7e5c7b2aa39c6bcc4}{ReservedTicket}}(\mbox{\hyperlink{class_ticket}{Ticket}}, \mbox{\hyperlink{classmy_string}{myString}}, \mbox{\hyperlink{classmy_string}{myString}});}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_reserved_ticket_ad5f79265d1cd25a7e5c7b2aa39c6bcc4}{ReservedTicket}}():\mbox{\hyperlink{class_ticket}{Ticket}}(),descriptin(\mbox{\hyperlink{classmy_string}{myString}}()),password(\mbox{\hyperlink{classmy_string}{myString}}())\{\}}
+\DoxyCodeLine{15     \mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{TicketStatus}} \mbox{\hyperlink{class_reserved_ticket_a1745c51b9657f42d74159ef9ed5b9644}{getStatus}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{16     \mbox{\hyperlink{classmy_string}{myString}} \mbox{\hyperlink{class_reserved_ticket_a43685ac2fdeb37fb3eebf14c26d8f06e}{getPassword}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{17     \mbox{\hyperlink{classmy_string}{myString}} \mbox{\hyperlink{class_reserved_ticket_a332dfc14e658bd67173bdf189e54dd56}{getDescription}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+
+\end{DoxyCode}

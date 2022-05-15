@@ -5,25 +5,25 @@
 #include "ReservedTicket.h"
 #include "BoughtTicket.h"
 
-class Performence
+class Performance
 {
 private:
-    std::time_t date;
-    myString title;
-    Vector<Ticket*> tickets;
+    std::time_t date;/** Date of the performance */
+    myString title;/** Title of the performance*/
+    Vector<Ticket*> tickets;/** List of tickets for the performance (Runtime polymorphism) */
     
     void deleteTickets();
-    void copyTickets(const Performence &);
+    void copyTickets(const Performance &);
     Ticket* &findTicket(int,int)const;
 
 public:
-    Performence():title(myString()), date(std::time_t()), tickets(Vector<Ticket*>()){}
-    Performence(std::time_t date, myString title);
-    Performence(const Performence&);
+    Performance():title(myString()), date(std::time_t()), tickets(Vector<Ticket*>()){}
+    Performance(std::time_t date, myString title);
+    Performance(const Performance&);
     myString getTitle()const;
-    Performence(Performence&& performence);
-    ~Performence();
-    Performence& operator=(const Performence&);
+    Performance(Performance&& performence);
+    ~Performance();
+    Performance& operator=(const Performance&);
     std::time_t getDate()const;
     const Vector<Ticket*>& getTickets()const;
 

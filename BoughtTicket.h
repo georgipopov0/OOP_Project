@@ -1,6 +1,10 @@
 #pragma once
 #include "Ticket.h"
 
+/**
+ * @brief 
+ * 
+ */
 class BoughtTicket : public Ticket
 {
 private:

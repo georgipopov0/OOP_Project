@@ -3,17 +3,26 @@
 #include "Hall.h"
 #include <fstream>
 
+
+/**
+ * @brief Controlls all performances.
+ * 
+ */
 class TicketOffice
 {
 private:
     Vector<Hall> halls;
 
-    Performence& findPerformence(myString title, std::time_t date )const;
+    Performance& findPerformence(myString title, std::time_t date )const;
     Hall& findHall(int hallId) const;
     void save(const char* filename);
 
 public:
 
+    /**
+     * @brief Construct a new Ticket Office object
+     * 
+     */
     TicketOffice():halls(Vector<Hall>()){}
 
     TicketOffice(const char * filename);

@@ -2,8 +2,11 @@
 #include <cstring>
 #include <stdlib.h>
 
-
-
+/**
+ * @brief Costructs a instance from a savefile
+ * 
+ * @param filename 
+ */
 TicketOffice::TicketOffice(const char * filename){
         std::ifstream in;
         in.open("savefile.txt");
@@ -11,18 +14,26 @@ TicketOffice::TicketOffice(const char * filename){
         {
             in >> *this;
         }else{
-            Hall hall1(1, Vector<Performence>(), 5, 5);
-            Hall hall2(2, Vector<Performence>(), 4, 4);
+            Hall hall1(1, Vector<Performance>(), 5, 5);
+            Hall hall2(2, Vector<Performance>(), 4, 4);
             this->addHall(hall1);
             this->addHall(hall2);
         }
         in.close();        
     }
 
-Performence& TicketOffice::findPerformence(myString title, std::time_t date) const{
+
+/**
+ * @brief Find a performance, throws exeptions if nothing is found.
+ * 
+ * @param title Title of the performance.
+ * @param date  Date of the perofmance.
+ * @return Performance& 
+ */
+Performance& TicketOffice::findPerformence(myString title, std::time_t date) const{
 for (int i = 0; i < halls.size(); i++)
     {
-        Performence *performence = halls.get(i).findPerformence(title, date);
+        Performance *performence = halls.get(i).findPerformence(title, date);
         if (performence)
         {
             return *performence;
@@ -31,6 +42,12 @@ for (int i = 0; i < halls.size(); i++)
     throw "Performence not found";
 }
 
+/**
+ * @brief Find hall specified by id, throws exeption if nothing is found.
+ * 
+ * @param hallId 
+ * @return Hall& 
+ */
 Hall& TicketOffice::findHall(int hallId) const{
     for (int i = 0; i < halls.size(); i++)
     {
@@ -42,6 +59,11 @@ Hall& TicketOffice::findHall(int hallId) const{
     throw "Hall not found";
 }
 
+/**
+ * @brief Saves the current instance to the specified file.
+ * 
+ * @param filename 
+ */
 void TicketOffice::save(const char* filename){
     std::ofstream of;
     of.open(filename);
@@ -49,23 +71,45 @@ void TicketOffice::save(const char* filename){
     of.close();
 }
 
-
+/**
+ * @brief Add new hall.
+ * 
+ * @param hall 
+ */
 void TicketOffice::addHall(Hall hall){
     this->halls.push(hall);
     save("savefile.txt");
 }
 
-
+/**
+ * @brief Add new performance.
+ * 
+ * @param title Title of the performance.
+ * @param date Date of the performance.
+ * @param hallId Id of the hall the performance should be added to.
+ */
 void TicketOffice::addPerformence(const char* title, time_t date, int hallId){
     Hall& hall = findHall(hallId);
-    hall.addPerformence(Performence(date, myString(title)));
+    hall.addPerformence(Performance(date, myString(title)));
     save("savefile.txt");
 }
 
+/**
+ * @brief 
+ * 
+ * @return const Vector<Hall>& 
+ */
 const Vector<Hall>& TicketOffice::getHalls()const{
     return halls;
 }
 
+/**
+ * @brief Prints all tickets with the specified status to the console.
+ * 
+ * @param title if "All" prints all performances on the specified date
+ * @param date if 0 prints all performances on with the specified title.
+ * @param status Status of the tickets.
+ */
 void TicketOffice::PrintTicketsWithStatusToConsole(const char* title, time_t date, TicketStatus status)const{
     // Eqivalent to ALL
     std::ofstream of;
@@ -74,7 +118,7 @@ void TicketOffice::PrintTicketsWithStatusToConsole(const char* title, time_t dat
         for (int i = 0; i < halls_size; i++)
         {
             try{
-            Vector<Performence*> performences = halls.get(i).findPerformence(title);
+            Vector<Performance*> performences = halls.get(i).findPerformence(title);
             int perf_size = performences.size();
             for (int i = 0; i < perf_size; i++)
             {
@@ -96,7 +140,7 @@ void TicketOffice::PrintTicketsWithStatusToConsole(const char* title, time_t dat
         for (int i = 0; i < halls_size; i++)
         {
             try{
-            Vector<Performence*> performences = halls.get(i).findPerformence(date);
+            Vector<Performance*> performences = halls.get(i).findPerformence(date);
             int perf_size = performences.size();
             for (int i = 0; i < perf_size; i++)
             {
@@ -113,7 +157,7 @@ void TicketOffice::PrintTicketsWithStatusToConsole(const char* title, time_t dat
         }
     }
     else{
-        Performence& performence = findPerformence(title, date);
+        Performance& performence = findPerformence(title, date);
         Vector<Ticket*> tickets = performence.getTicktesWithStatus(status);
         
         // to console
@@ -125,6 +169,13 @@ void TicketOffice::PrintTicketsWithStatusToConsole(const char* title, time_t dat
     }
 }
 
+/**
+ * @brief Prints all tickets with the specified status to report files.
+ * 
+ * @param title if "All" prints all performances on the specified date
+ * @param date if 0 prints all performances on with the specified title.
+ * @param status Status of the tickets.
+ */
 void TicketOffice::PrintTicketsWithStatusToFile(const char* title, time_t date, TicketStatus status)const{
     // Eqivalent to ALL
     std::ofstream of;
@@ -133,7 +184,7 @@ void TicketOffice::PrintTicketsWithStatusToFile(const char* title, time_t date, 
         for (int i = 0; i < halls_size; i++)
         {
             try{
-            Vector<Performence*> performences = halls.get(i).findPerformence(title);
+            Vector<Performance*> performences = halls.get(i).findPerformence(title);
             int perf_size = performences.size();
             for (int i = 0; i < perf_size; i++)
             {
@@ -160,7 +211,7 @@ void TicketOffice::PrintTicketsWithStatusToFile(const char* title, time_t date, 
         for (int i = 0; i < halls_size; i++)
         {
             try{
-            Vector<Performence*> performences = halls.get(i).findPerformence(date);
+            Vector<Performance*> performences = halls.get(i).findPerformence(date);
             int perf_size = performences.size();
             for (int i = 0; i < perf_size; i++)
             {
@@ -182,7 +233,7 @@ void TicketOffice::PrintTicketsWithStatusToFile(const char* title, time_t date, 
         }
     }
     else{
-        Performence& performence = findPerformence(title, date);
+        Performance& performence = findPerformence(title, date);
         Vector<Ticket*> tickets = performence.getTicktesWithStatus(status);
         // to file
         myString filename = myString("report-").concat(performence.getTitle()).concat("-").concat(ctime(&date));
@@ -196,6 +247,11 @@ void TicketOffice::PrintTicketsWithStatusToFile(const char* title, time_t date, 
     }
 }
 
+/**
+ * @brief Prints a statistic for all tickets bouth in the specified hall.
+ * 
+ * @param hallId if 0 prints statistic for all hall.
+ */
 void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
     // Equal to ALL
     if(hallId = -1){
@@ -203,7 +259,7 @@ void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
         for (int i = 0; i < halls_size; i++)
         {
             Hall& hall = halls.get(i);
-            const Vector<Performence>& perf = hall.getPerformences();
+            const Vector<Performance>& perf = hall.getPerformences();
             int perf_size = perf.size();
             std::cout << "----------------------------" << std::endl 
                 << "Hall number " << hall.getHallId() << std::endl;
@@ -217,7 +273,7 @@ void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
     }
     else{
         Hall hall = this->findHall(hallId);
-        const Vector<Performence>& perf = hall.getPerformences();
+        const Vector<Performance>& perf = hall.getPerformences();
         int perf_size = perf.size();
         std::cout << "----------------------------" << std::endl 
             << "Hall number " << hall.getHallId() << std::endl;
@@ -232,16 +288,42 @@ void TicketOffice::PrintBouthTicketsForHall(int hallId)const{
 
 // Pretty shure some lambda
 // magic can be used here ...
+/**
+ * @brief Reserve a ticket.
+ * 
+ * @param title Title of the performance.
+ * @param date Date of the performance.
+ * @param roll Roll of the ticket.
+ * @param seat Seat of the ticket.
+ * @param pass Password for the reservation.
+ * @param description Description for the reservation.
+ */
 void TicketOffice::ReservTicket(const char* title, time_t date, int roll, int seat, myString pass, myString description = myString()){
     this->findPerformence(title,date).ReserveTicket(roll, seat, pass, description);
     save("savefile.txt");
 }
 
+/**
+ * @brief Cancel reservation.
+ * 
+ * @param title Title of the performance.
+ * @param date Date of the performance.
+ * @param roll Roll of the ticket.
+ * @param seat Seat of the ticket. 
+ */
 void TicketOffice::CancelReservation(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).CancelReservation(roll, seat);
     save("savefile.txt");
 }
 
+/**
+ * @brief Buy a ticket.
+ * 
+ * @param title Title of the performance.
+ * @param date Date of the performance.
+ * @param roll Roll of the ticket.
+ * @param seat Seat of the ticket.
+ */
 void TicketOffice::BuyTicket(const char* title, time_t date, int roll, int seat){
     this->findPerformence(title, date).BuyTicket(roll, seat);
     save("savefile.txt");
@@ -249,6 +331,13 @@ void TicketOffice::BuyTicket(const char* title, time_t date, int roll, int seat)
 
 // The hardcode is real
 // (had to put it here or the linker gets angry)
+/**
+ * @brief Overloaded output to stream for Vector<Ticket*>
+ * 
+ * @param os 
+ * @param vec 
+ * @return std::ostream& 
+ */
 std::ostream& operator<<(std::ostream& os, const Vector<Ticket*>& vec){
     int size = vec.size();
     for (int i = 0; i < size; i++)
@@ -258,6 +347,13 @@ std::ostream& operator<<(std::ostream& os, const Vector<Ticket*>& vec){
     return os;
 }
 
+/**
+ * @brief Writing ticketOffice to file.
+ * 
+ * @param output 
+ * @param ticketOffice 
+ * @return std::ofstream& 
+ */
 std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOffice){
     int hall_count = ticketOffice.halls.size();
     for (int i = 0; i < hall_count; i++)
@@ -267,7 +363,7 @@ std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOf
         int performences_size = hall.getPerformences().size();
         for (int j = 0; j < performences_size; j++)
         {
-            Performence& performence = hall.getPerformences().get(j);
+            Performance& performence = hall.getPerformences().get(j);
             output <<'('<<performence.getTitle().getChar()<<','<<performence.getDate();
             int tickets_size = performence.getTickets().size();
             for (int k = 0; k < tickets_size; k++)
@@ -295,6 +391,13 @@ std::ofstream & operator <<(std::ofstream & output, TicketOffice const& ticketOf
     return output;  
 }
 
+/**
+ * @brief Reading ticket office from file.
+ * 
+ * @param is 
+ * @param office 
+ * @return std::ifstream& 
+ */
 std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
     office = TicketOffice();
     Vector<Hall> halls;
@@ -308,7 +411,7 @@ std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
         is.getline(rolls, 8, ',');
         char seats[8];
         is.getline(seats, 8, '(');
-        Hall hall(std::atoi(hallid), Vector<Performence>() ,std::atoi(rolls), std::atoi(seats));
+        Hall hall(std::atoi(hallid), Vector<Performance>() ,std::atoi(rolls), std::atoi(seats));
         if(is.eof()){
             break;
         }
@@ -324,9 +427,9 @@ std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
             is.getline(title, 256, ',');
             char date[256];
             is.getline(date, 256, '(');
-            Performence tmpPerformence(std::atoi(date), title);
+            Performance tmpPerformence(std::atoi(date), title);
             hall.addPerformence(tmpPerformence);
-            Performence* performence = hall.findPerformence(title, tmpPerformence.getDate());
+            Performance* performence = hall.findPerformence(title, tmpPerformence.getDate());
             Vector<Ticket*> tmpTickets;
             while (true)
             {
@@ -357,6 +460,7 @@ std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
                     tmpTickets.push((Ticket*)(new ReservedTicket(Ticket(std::atoi(roll),std::atoi(seat)),pass,desc)));
                 }
                 is.get();
+                // performence->UpdateTickets(tmpTickets);
             }
         }
         halls.push(hall);

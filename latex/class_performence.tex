@@ -1,0 +1,149 @@
+\hypertarget{class_performence}{}\doxysection{Performence Class Reference}
+\label{class_performence}\index{Performence@{Performence}}
+
+
+{\ttfamily \#include $<$Performence.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_performence_a0888ffd7ea793c8f8f0ea009543b0da3}{Performence}} ()
+\item 
+\mbox{\hyperlink{class_performence_a62c672cfba7557aa7d516d3218dba62c}{Performence}} (std\+::time\+\_\+t date, \mbox{\hyperlink{classmy_string}{my\+String}} title)
+\item 
+\mbox{\hyperlink{class_performence_a316c084750540efe584f4addde3fd0db}{Performence}} (const \mbox{\hyperlink{class_performence}{Performence}} \&)
+\item 
+\mbox{\hyperlink{classmy_string}{my\+String}} \mbox{\hyperlink{class_performence_ab08057f47d0097b2ba1862090bab1f28}{get\+Title}} () const
+\item 
+\mbox{\hyperlink{class_performence_adb307bfbec40dfc07a484b957f841632}{Performence}} (\mbox{\hyperlink{class_performence}{Performence}} \&\&performence)
+\item 
+\mbox{\hyperlink{class_performence_a62f2d4734beb3be878bb7e139b6dd622}{$\sim$\+Performence}} ()
+\item 
+\mbox{\hyperlink{class_performence}{Performence}} \& \mbox{\hyperlink{class_performence_a466b1f5b4c0df8d23f1b99dae48ed609}{operator=}} (const \mbox{\hyperlink{class_performence}{Performence}} \&)
+\item 
+std\+::time\+\_\+t \mbox{\hyperlink{class_performence_a5ef38e4351e07e791e5a7318ea1d7c68}{get\+Date}} () const
+\item 
+const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \& \mbox{\hyperlink{class_performence_a1ddf73ff0a3cf680b3600b16d20a8c8e}{get\+Tickets}} () const
+\item 
+void \mbox{\hyperlink{class_performence_ade0c6b6bdd98f5aca4c3d3abe8d4a898}{generate\+Tickets}} (int rolls, int seats)
+\item 
+\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \mbox{\hyperlink{class_performence_a124e2ef3967b51e5047c2a7847f79e38}{get\+Ticktes\+With\+Status}} (\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}) const
+\item 
+void \mbox{\hyperlink{class_performence_a193a7df3839f95ce8a86e26e9facecca}{Reserve\+Ticket}} (int roll, int seat, \mbox{\hyperlink{classmy_string}{my\+String}}, \mbox{\hyperlink{classmy_string}{my\+String}})
+\item 
+void \mbox{\hyperlink{class_performence_adf09210c774465e1f803decefd49185d}{Cancel\+Reservation}} (int roll, int seat)
+\item 
+void \mbox{\hyperlink{class_performence_a35debecca5aa567bcabfc2b968279562}{Buy\+Ticket}} (int roll, int seat)
+\item 
+void \mbox{\hyperlink{class_performence_a8a9e76e70e12b234a2cf2eefe4770d9a}{Update\+Ticket}} (\mbox{\hyperlink{class_ticket}{Ticket}} $\ast$new\+Ticket)
+\item 
+void \mbox{\hyperlink{class_performence_af4f65fe578527bce0d24099bedba5164}{Update\+Tickets}} (\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ tickets)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_performence_a0888ffd7ea793c8f8f0ea009543b0da3}\label{class_performence_a0888ffd7ea793c8f8f0ea009543b0da3}} 
+\index{Performence@{Performence}!Performence@{Performence}}
+\index{Performence@{Performence}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{Performence()}{Performence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Performence\+::\+Performence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_performence_a62c672cfba7557aa7d516d3218dba62c}\label{class_performence_a62c672cfba7557aa7d516d3218dba62c}} 
+\index{Performence@{Performence}!Performence@{Performence}}
+\index{Performence@{Performence}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{Performence()}{Performence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Performence\+::\+Performence (\begin{DoxyParamCaption}\item[{std\+::time\+\_\+t}]{date,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{title }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_a316c084750540efe584f4addde3fd0db}\label{class_performence_a316c084750540efe584f4addde3fd0db}} 
+\index{Performence@{Performence}!Performence@{Performence}}
+\index{Performence@{Performence}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{Performence()}{Performence()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Performence\+::\+Performence (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_performence}{Performence}} \&}]{performence }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_adb307bfbec40dfc07a484b957f841632}\label{class_performence_adb307bfbec40dfc07a484b957f841632}} 
+\index{Performence@{Performence}!Performence@{Performence}}
+\index{Performence@{Performence}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{Performence()}{Performence()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Performence\+::\+Performence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_performence}{Performence}} \&\&}]{performence }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_a62f2d4734beb3be878bb7e139b6dd622}\label{class_performence_a62f2d4734beb3be878bb7e139b6dd622}} 
+\index{Performence@{Performence}!````~Performence@{$\sim$Performence}}
+\index{````~Performence@{$\sim$Performence}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{$\sim$Performence()}{~Performence()}}
+{\footnotesize\ttfamily Performence\+::$\sim$\+Performence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_performence_a35debecca5aa567bcabfc2b968279562}\label{class_performence_a35debecca5aa567bcabfc2b968279562}} 
+\index{Performence@{Performence}!BuyTicket@{BuyTicket}}
+\index{BuyTicket@{BuyTicket}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{BuyTicket()}{BuyTicket()}}
+{\footnotesize\ttfamily void Performence\+::\+Buy\+Ticket (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_adf09210c774465e1f803decefd49185d}\label{class_performence_adf09210c774465e1f803decefd49185d}} 
+\index{Performence@{Performence}!CancelReservation@{CancelReservation}}
+\index{CancelReservation@{CancelReservation}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{CancelReservation()}{CancelReservation()}}
+{\footnotesize\ttfamily void Performence\+::\+Cancel\+Reservation (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_ade0c6b6bdd98f5aca4c3d3abe8d4a898}\label{class_performence_ade0c6b6bdd98f5aca4c3d3abe8d4a898}} 
+\index{Performence@{Performence}!generateTickets@{generateTickets}}
+\index{generateTickets@{generateTickets}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{generateTickets()}{generateTickets()}}
+{\footnotesize\ttfamily void Performence\+::generate\+Tickets (\begin{DoxyParamCaption}\item[{int}]{rolls,  }\item[{int}]{seats }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_a5ef38e4351e07e791e5a7318ea1d7c68}\label{class_performence_a5ef38e4351e07e791e5a7318ea1d7c68}} 
+\index{Performence@{Performence}!getDate@{getDate}}
+\index{getDate@{getDate}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily std\+::time\+\_\+t Performence\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_performence_a1ddf73ff0a3cf680b3600b16d20a8c8e}\label{class_performence_a1ddf73ff0a3cf680b3600b16d20a8c8e}} 
+\index{Performence@{Performence}!getTickets@{getTickets}}
+\index{getTickets@{getTickets}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{getTickets()}{getTickets()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ \& Performence\+::get\+Tickets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_performence_a124e2ef3967b51e5047c2a7847f79e38}\label{class_performence_a124e2ef3967b51e5047c2a7847f79e38}} 
+\index{Performence@{Performence}!getTicktesWithStatus@{getTicktesWithStatus}}
+\index{getTicktesWithStatus@{getTicktesWithStatus}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{getTicktesWithStatus()}{getTicktesWithStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$ Performence\+::get\+Ticktes\+With\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ticket_8h_ae4ad5c9a1b71b87331ca7c0cd486446d}{Ticket\+Status}}}]{status }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_performence_ab08057f47d0097b2ba1862090bab1f28}\label{class_performence_ab08057f47d0097b2ba1862090bab1f28}} 
+\index{Performence@{Performence}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{getTitle()}{getTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmy_string}{my\+String}} Performence\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_performence_a466b1f5b4c0df8d23f1b99dae48ed609}\label{class_performence_a466b1f5b4c0df8d23f1b99dae48ed609}} 
+\index{Performence@{Performence}!operator=@{operator=}}
+\index{operator=@{operator=}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_performence}{Performence}} \& Performence\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_performence}{Performence}} \&}]{performence }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_a193a7df3839f95ce8a86e26e9facecca}\label{class_performence_a193a7df3839f95ce8a86e26e9facecca}} 
+\index{Performence@{Performence}!ReserveTicket@{ReserveTicket}}
+\index{ReserveTicket@{ReserveTicket}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{ReserveTicket()}{ReserveTicket()}}
+{\footnotesize\ttfamily void Performence\+::\+Reserve\+Ticket (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{int}]{seat,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{password,  }\item[{\mbox{\hyperlink{classmy_string}{my\+String}}}]{descriprion }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_a8a9e76e70e12b234a2cf2eefe4770d9a}\label{class_performence_a8a9e76e70e12b234a2cf2eefe4770d9a}} 
+\index{Performence@{Performence}!UpdateTicket@{UpdateTicket}}
+\index{UpdateTicket@{UpdateTicket}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{UpdateTicket()}{UpdateTicket()}}
+{\footnotesize\ttfamily void Performence\+::\+Update\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ticket}{Ticket}} $\ast$}]{new\+Ticket }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_performence_af4f65fe578527bce0d24099bedba5164}\label{class_performence_af4f65fe578527bce0d24099bedba5164}} 
+\index{Performence@{Performence}!UpdateTickets@{UpdateTickets}}
+\index{UpdateTickets@{UpdateTickets}!Performence@{Performence}}
+\doxysubsubsection{\texorpdfstring{UpdateTickets()}{UpdateTickets()}}
+{\footnotesize\ttfamily void Performence\+::\+Update\+Tickets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_ticket}{Ticket}} $\ast$ $>$}]{tickets }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_performence_8h}{Performence.\+h}}\item 
+\mbox{\hyperlink{_perfomence_8cpp}{Perfomence.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,9 @@
-
+/**
+ * @brief Adds a new element to the back of the array.
+ * 
+ * @tparam T 
+ * @param element 
+ */
 template <class T>
 void Vector<T>::push(T element){
     if(elemCount == capacity){
@@ -16,6 +21,12 @@ void Vector<T>::push(T element){
     elemCount++; 
 }
 
+/**
+ * @brief Copy constructor.
+ * 
+ * @tparam T 
+ * @param vector 
+ */
 template <class T>
 Vector<T>::Vector(Vector<T>& vector){
     this->capacity = vector.capacity;
@@ -27,6 +38,12 @@ Vector<T>::Vector(Vector<T>& vector){
     }
 }
 
+/**
+ * @brief Move constructor.
+ * 
+ * @tparam T 
+ * @param vector 
+ */
 template <class T>
 Vector<T>::Vector(Vector<T>&& vector){
     capacity = vector.capacity;
@@ -37,6 +54,13 @@ Vector<T>::Vector(Vector<T>&& vector){
     vector.elemCount = 0;
 }
 
+/**
+ * @brief Assaingment operator
+ * 
+ * @tparam T 
+ * @param vector Vector to copy.
+ * @return Vector<T>&  The current vector.
+ */
 template <class T>
 Vector<T>& Vector<T>::operator=(const Vector<T>& vector){
     delete[] this->elements;
@@ -50,6 +74,13 @@ Vector<T>& Vector<T>::operator=(const Vector<T>& vector){
     return *this;
 }
 
+/**
+ * @brief Adds element to the given positin.
+ * 
+ * @tparam T 
+ * @param element Element to add.
+ * @param index Position
+ */
 template <class T>
 void Vector<T>::push(T element, int index){
     if(index>capacity){
@@ -63,11 +94,25 @@ void Vector<T>::push(T element, int index){
     }
 } 
 
+/**
+ * @brief Remove last element
+ * 
+ * @tparam T 
+ * @return T Value of the removed element.
+ */
 template<typename T>
 T Vector<T>::pop(){
     elemCount--;
+    return this->elements[elemCount];
 }
 
+/**
+ * @brief Returns refference to element specified by position.
+ * 
+ * @tparam T 
+ * @param index Position of the element.
+ * @return T& The requested element.
+ */
 template<typename T>
 T& Vector<T>::get(int index)const{
     if(index > elemCount || index < 0){
@@ -76,17 +121,33 @@ T& Vector<T>::get(int index)const{
     return elements[index];
 }
 
-
+/**
+ * @brief 
+ * 
+ * @tparam T 
+ * @return int Number of elements in the vector.
+ */
 template<typename T>
 int Vector<T>::size()const{
     return elemCount;
 }
 
+/**
+ * @brief 
+ * 
+ * @tparam T 
+ * @return int Current capacity of the vector.
+ */
 template<typename T>
 int Vector<T>::getCapacity()const{
     return capacity;
 }
 
+/**
+ * @brief Destroy the Vector< T>:: Vector object
+ * 
+ * @tparam T 
+ */
 template<typename T>
 Vector<T>::~Vector(){
     delete[] elements;

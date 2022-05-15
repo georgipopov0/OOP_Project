@@ -1,0 +1,33 @@
+\hypertarget{_hall_8h_source}{}\doxysection{Hall.\+h}
+\mbox{\hyperlink{_hall_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my_string_8h}{myString.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my_vector_8h}{myVector.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_performence_8h}{Performence.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_hall}{Hall}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} hallId; }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_vector}{Vector<Performance>}} performences; }
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} rolls; }
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} seats; }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_hall_a122ed8085be305339c89cadb3e360b86}{Hall}}():hallId(0),performences(\mbox{\hyperlink{class_vector}{Vector}}<\mbox{\hyperlink{class_performance}{Performance}}>()),rolls(0),seats(0)\{\}}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_hall_a122ed8085be305339c89cadb3e360b86}{Hall}}(\textcolor{keywordtype}{int}, \mbox{\hyperlink{class_vector}{Vector<Performance>}}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_hall_a122ed8085be305339c89cadb3e360b86}{Hall}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hall}{Hall}}\&);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hall_a2612d0350c629f9bcab37b79ecdef475}{getHallId}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{28     \textcolor{keyword}{const} \mbox{\hyperlink{class_vector}{Vector<Performance>}}\& \mbox{\hyperlink{class_hall_a070877f4ac30c0f0ff95580474df4857}{getPerformences}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hall_ab01c9b835a654a37d8f251ae40bd4e05}{getRolls}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hall_a2078be3e31b1a340cf345e1716c758d7}{getSeats}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hall_a1692174a62734974555c22e1961299c3}{addPerformence}}(\mbox{\hyperlink{class_performance}{Performance}} performence);}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_performance}{Performance}}* \mbox{\hyperlink{class_hall_ae0fee3a3f633c6cad6e2c629e186a27a}{findPerformence}}(\mbox{\hyperlink{classmy_string}{myString}}, std::time\_t)\textcolor{keyword}{const} ;}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_vector}{Vector<Performance*>}} \mbox{\hyperlink{class_hall_ae0fee3a3f633c6cad6e2c629e186a27a}{findPerformence}}(\mbox{\hyperlink{classmy_string}{myString}})\textcolor{keyword}{const};}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_vector}{Vector<Performance*>}} \mbox{\hyperlink{class_hall_ae0fee3a3f633c6cad6e2c629e186a27a}{findPerformence}}(std::time\_t date)\textcolor{keyword}{const};}
+\DoxyCodeLine{36 \};}
+
+\end{DoxyCode}
