@@ -142,41 +142,45 @@ void Controller::init(){
         printBanner();
         char input;
         std::cin >> input;
-        switch (input)
-        {
-        case '1':
-            addPerformence();
-            break;
-        case '2':
-            printAvailable();
-            break;
+        try{
+            switch (input)
+            {
+            case '1':
+                addPerformence();
+                break;
+            case '2':
+                printAvailable();
+                break;
 
-        case '3':
-            ReservedTicket();
-            break;
+            case '3':
+                ReservedTicket();
+                break;
 
-        case '4':
-            cancelReservation();
-            break;
+            case '4':
+                cancelReservation();
+                break;
 
-        case '5':
-            buyTicket();
-            break;
+            case '5':
+                buyTicket();
+                break;
 
-        case '6':
-            printReservations();
-            break;
+            case '6':
+                printReservations();
+                break;
 
-        case '7':
-            printBoughtTicketsForHall();
-            break;
+            case '7':
+                printBoughtTicketsForHall();
+                break;
 
-        case '8':
-            exit = true;
-            break;
+            case '8':
+                exit = true;
+                break;
 
-        default:
-            break;
+            default:
+                break;
+            }
+        }catch(const char* message){
+            std::cout << message << std::endl;
         }
     }
 }

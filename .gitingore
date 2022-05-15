@@ -52,6 +52,7 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+*.txt
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
@@ -67,4 +68,5 @@
 # Ather
 *.txt
 report*
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++

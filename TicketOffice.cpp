@@ -309,7 +309,7 @@ std::ifstream& operator >>(std::ifstream& is, TicketOffice& office){
         char seats[8];
         is.getline(seats, 8, '(');
         Hall hall(std::atoi(hallid), Vector<Performence>() ,std::atoi(rolls), std::atoi(seats));
-        if(is){
+        if(is.eof()){
             break;
         }
         while(is){
