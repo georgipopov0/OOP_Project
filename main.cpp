@@ -3,6 +3,8 @@
 #include <ctime>
 #include "Controller.h"
 
+//Github: https://github.com/georgipopov0/OOP_Project
+
 
 int main(int argc, char const *argv[])
 {

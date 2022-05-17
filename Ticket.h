@@ -20,6 +20,7 @@ protected:
 public:
     Ticket():roll(0), seat(0){}
     Ticket(int,int);
+    virtual ~Ticket(){}
 
     virtual TicketStatus getStatus() const;
     int getRoll() const;
